@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  body: MyString
+  image: MyString
+  eaten: false
+  smell: false
+  sound: false
+  spill: false
+
+two:
+  title: MyString
+  body: MyString
+  image: MyString
+  eaten: false
+  smell: false
+  sound: false
+  spill: false

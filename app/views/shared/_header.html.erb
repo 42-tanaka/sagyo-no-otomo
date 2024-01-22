@@ -2,6 +2,20 @@
 <header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-blue-600 text-sm py-3 sm:py-0">
   <nav class="relative max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8" aria-label="Global">
     <div class="flex items-center justify-between">
+
+              <details class="dropdown">
+            <summary class="m-1 btn">menu</summary>
+            <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+              <li><%= link_to "投稿する", new_post_path %></li>
+              <li><%= link_to "投稿一覧", posts_path %></li>
+              <li><%= link_to "ラッキーアイテム", root_path %></a></li>
+              <li><%= link_to "検索", root_path %></li>
+              <li><%= link_to "自分の投稿", root_path %></li>
+              <li><%= link_to "マイページ", root_path %></li>
+              <li><%= link_to "ログアウト", root_path %></li>
+            </ul>
+          </details>
+
       <a class="flex-none text-xl font-semibold text-white" href="#" aria-label="Brand">作業のオトモ</a>
       <div class="sm:hidden">
         <button type="button" class="hs-collapse-toggle w-9 h-9 flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-white/20 text-white hover:border-white/40 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600" data-hs-collapse="#navbar-collapse-with-animation" aria-controls="navbar-collapse-with-animation" aria-label="Toggle navigation">
@@ -10,6 +24,9 @@
         </button>
       </div>
     </div>
+
+        <%
+=begin%>
     <div id="navbar-collapse-with-animation" class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow sm:block">
       <div class="flex flex-col gap-y-4 gap-x-0 mt-5 sm:flex-row sm:items-center sm:justify-end sm:gap-y-0 sm:gap-x-7 sm:mt-0 sm:ps-7">
         <a class="font-medium text-white sm:py-6" href="#" aria-current="page">
@@ -24,8 +41,7 @@
           <%= link_to "ログアウト", root_path, class: "font-medium text-white/[.8] hover:text-white sm:py-6" %>
         </a>
 
-        <%
-=begin%>
+
  <div class="hs-dropdown [--strategy:static] sm:[--strategy:fixed] [--adaptive:none] sm:[--trigger:hover] sm:py-4">
           <button type="button" class="flex items-center w-full text-white/[.8] hover:text-white font-medium">
             Dropdown

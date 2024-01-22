@@ -12,7 +12,7 @@
               <li><%= link_to "検索", root_path %></li>
               <li><%= link_to "自分の投稿", root_path %></li>
               <li><%= link_to "マイページ", root_path %></li>
-              <li><%= link_to "ログアウト", root_path %></li>
+              <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             </ul>
           </details>
 

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root "tops#index"
   devise_for :users, controllers: {
     omniauth_callbacks: 'omniauth_callbacks',
-    sessions: 'sessions'
+    #sessions: 'sessions'  ログアウト機能はdeviseのみで可能
   }
 
   resources :posts

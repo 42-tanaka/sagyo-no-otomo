@@ -1,0 +1,14 @@
+
+<label class="form-control w-full max-w-xs">
+  <div class="label">
+    <span class="label-text">ユーザー名</span>
+  </div>
+  <%= form_with model: @profile, url: profile_path do |f| %>
+    <%= f.text_field :name, placeholder: "ここに入力", class: "input input-bordered w-full max-w-xs" %>
+  <div class="label">
+  <button class="btn">
+    <span class="label-text-alt"><%= f.submit "登録" %></span>
+    </button>
+  </div>
+    <% end %>
+</label>

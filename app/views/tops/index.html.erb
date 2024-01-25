@@ -1,9 +1,11 @@
 <div>
-  <h1 class="font-bold text-4xl">Tops#index</h1>
-  <p>Find me in app/views/tops/index.html.erb</p>
-
+  <h1 class="font-bold text-4xl">作業のオトモ</h1>
+<br>
+*以下のリンクは仮置き
+<br>
   <%= link_to "LINEログイン", user_line_omniauth_authorize_path,
   class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium", method: :post %>
 <br>
   <%= link_to "ログアウト", destroy_user_session_path,
   class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium", data: { turbo_method: :delete } %>
+<br>

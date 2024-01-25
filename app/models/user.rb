@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[line]
 
   has_one :profile, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   def profile_created?
     profile.present?

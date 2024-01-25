@@ -7,6 +7,10 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
 
+  def profile_created?
+    profile.present?
+  end
+
   def social_profile(provider)
     social_profiles.select { |sp| sp.provider == provider.to_s }.first
   end

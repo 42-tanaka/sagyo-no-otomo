@@ -11,7 +11,7 @@
               <li><%= link_to "投稿一覧", posts_path %></li>
               <li><%= link_to "ラッキーアイテム", root_path %></a></li>
               <li><%= link_to "検索", root_path %></li>
-              <li><%= link_to "自分の投稿", root_path %></li>
+              <li><%= link_to "自分の投稿", my_posts_index_path %></li>
               <li><%= link_to "マイページ", profile_path %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %></li>
             </ul>

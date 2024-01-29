@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'my_posts/index'
   root "tops#index"
   devise_for :users, controllers: {
     omniauth_callbacks: 'omniauth_callbacks',

@@ -4,29 +4,40 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <h1 class="font-bold text-4xl">投稿詳細</h1> 
+    <h1 class="font-bold text-2xl">投稿詳細</h1>
 
 
 <div class="card w-96 bg-base-100 shadow-xl mt-6">
   <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
   <div class="card-body">
     <h2 class="card-title"><%= @post.title %></h2>
-    <div class="card-actions justify-end">
+
+      <p class="badge badge-accent w-full flex">
+      <%= @post.category == "food" ? "食べ物" : "飲み物"%>
+      </p>
+
+      <% if @post.eaten %>
+        <div class="badge badge-outline w-full flex">食べたことがある</div>
+      <% else %>
+        <p class="badge w-full flex" >食べたことはない</p>
+      <% end %>
+
+    <div class="card-actions justify-light">
       <% if @post.smell || @post.sound || @post.spill %>
-      気になるかも？
         <% if @post.smell %>
-          <div class="badge badge-outline">匂い</div>
+          <div class="badge badge-secondary">匂いがある</div>
         <% end %>
         <% if @post.sound %>
-          <div class="badge badge-outline">音</div>
+          <div class="badge badge-secondary">音がする</div>
         <% end %>
         <% if @post.spill %>
-          <div class="badge badge-outline">こぼしやすい</div>
+          <div class="badge badge-secondary">こぼしやすい</div>
         <% end %>
       <% else %>
-        <p class="badge badge-outline" >職場でも気にならない！</p>
+        <p class="badge badge-primary w-full flex" >職場でも気にならない！</p>
       <% end %>
     </div>
+
     <%= @post.body %>
   </div>
   </div>

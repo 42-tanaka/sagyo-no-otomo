@@ -3,47 +3,59 @@
     <% if notice.present? %>
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
-
     <h1 class="font-bold text-2xl">投稿詳細</h1>
 
+  <div class="card w-full sm:w-96 bg-base-100 shadow-xl mt-6 mx-4 sm:mx-auto">
+    <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+    <div class="card-body">
+      <h2 class="card-title"><%= @post.title %></h2>
 
-<div class="card w-96 bg-base-100 shadow-xl mt-6">
-  <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-  <div class="card-body">
-    <h2 class="card-title"><%= @post.title %></h2>
-
-      <p class="badge badge-accent w-full flex">
+      <div class="badge badge-accent">
       <%= @post.category == "food" ? "食べ物" : "飲み物"%>
-      </p>
+      </div>
 
       <% if @post.eaten %>
-        <div class="badge badge-outline w-full flex">食べたことがある</div>
+        <div class="badge badge-outline">食べたことがある</div>
       <% else %>
-        <p class="badge w-full flex" >食べたことはない</p>
+        <p class="badge" >食べたことはない</p>
       <% end %>
 
-    <div class="card-actions justify-light">
-      <% if @post.smell || @post.sound || @post.spill %>
-        <% if @post.smell %>
-          <div class="badge badge-secondary">匂いがある</div>
+      <div class="card-actions justify-light">
+        <% if @post.smell || @post.sound || @post.spill %>
+          <% if @post.smell %>
+            <div class="badge badge-secondary  w-full flex">匂いがある</div>
+          <% end %>
+          <% if @post.sound %>
+            <div class="badge badge-secondary  w-full flex">音がする</div>
+          <% end %>
+          <% if @post.spill %>
+            <div class="badge badge-secondary  w-full flex">こぼしやすい</div>
+          <% end %>
+        <% else %>
+          <p class="badge badge-primary w-full flex" >職場でも気にならない！</p>
         <% end %>
-        <% if @post.sound %>
-          <div class="badge badge-secondary">音がする</div>
-        <% end %>
-        <% if @post.spill %>
-          <div class="badge badge-secondary">こぼしやすい</div>
-        <% end %>
-      <% else %>
-        <p class="badge badge-primary w-full flex" >職場でも気にならない！</p>
-      <% end %>
+      </div>
+
+      <%= @post.body %>
+
+      <div class="card-actions flex justify-end">
+        <%= button_to "編集", edit_post_path(@post), class: "btn btn-ghost mr-1" %>
+        <%= button_to "削除", post_path(@post), method: :delete,  class: "btn btn-ghost mr-1" %>
+        <%= link_to "一覧に戻る", posts_path, class: "btn btn-ghost" %>
+      </div>
     </div>
-
-    <%= @post.body %>
   </div>
+</div>
+
+<%
+=begin%>
+ 
   </div>
     <%= link_to "編集", edit_post_path(@post), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
       <%= button_to "削除", post_path(@post), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
     <%= link_to "一覧に戻る", posts_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-</div>
+</div> 
+<%
+=end%>

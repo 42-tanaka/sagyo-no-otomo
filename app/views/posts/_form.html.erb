@@ -2,7 +2,6 @@
   <% if post.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
         <% post.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,8 +10,22 @@
     </div>
   <% end %>
 
+
   <div class="my-5">
-    <%= form.label :title, "食べた または 飲んだもの" %>
+    <%= form.radio_button  :category, "food", class:"radio"  %>
+    <%= form.label :category_food, "食べ物" %>
+
+    <%= form.radio_button :category, "drink", class:"radio" %>
+    <%= form.label :category_drink, "飲み物" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.check_box :eaten, class: "checkbox" %>
+    <%= form.label :eaten, "食べたことがある" %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :title, "なまえ" %>
     <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
@@ -26,32 +39,22 @@
     <%= form.text_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
-  <div class="field">
-    <%= form.label :category_food, "食べ物" %>
-    <%= form.radio_button :category, "food" %>
 
-    <%= form.label :category_drink, "飲み物" %>
-    <%= form.radio_button :category, "drink" %>
+
+職場では気になるかもしれないポイント
+  <div class="my-5">
+    <%= form.check_box :smell, class: "checkbox" %>
+    <%= form.label :smell, "匂いがある" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :eaten, "食べたことがある" %>
-    <%= form.check_box :eaten, class: "block mt-2 h-5 w-5" %>
+    <%= form.check_box :sound, class: "checkbox" %>
+    <%= form.label :sound, "音がする" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :smell, "匂いが気になる" %>
-    <%= form.check_box :smell, class: "block mt-2 h-5 w-5" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :sound, "音が気になる" %>
-    <%= form.check_box :sound, class: "block mt-2 h-5 w-5" %>
-  </div>
-
-  <div class="my-5">
+    <%= form.check_box :spill, class: "checkbox" %>
     <%= form.label :spill, "こぼしやすい" %>
-    <%= form.check_box :spill, class: "block mt-2 h-5 w-5" %>
   </div>
 
   <div class="inline">

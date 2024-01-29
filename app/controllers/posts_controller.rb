@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
   end
 
   # GET /posts/1 or /posts/1.json
@@ -23,7 +23,6 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = current_user.posts.build(post_params)
-
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "投稿しました" }
@@ -66,6 +65,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body, :image, :category, :eaten, :smell, :sound, :spill, :user_id)
+      params.require(:post).permit(:title, :body, :image, :category, :eaten, :smell, :sound, :spill)
     end
 end

@@ -1,10 +1,11 @@
-<!-- ========== HEADER ========== -->
-<header class="flex flex-wrap sm:justify-start sm:flex-nowrap z-50 w-full bg-blue-600 text-sm py-3 sm:py-0">
-  <nav class="relative max-w-[85rem] w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8" aria-label="Global">
-    <div class="flex items-center justify-between">
-
-          <div class="dropdown">
-            <div tabindex="0" role="button" class="btn m-1">menu</div>
+<header>
+  <div class="navbar bg-base-100">
+    <div class="flex-none">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn m-1">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+          </path></svg></div>
             <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
               <li><%= link_to "投稿する", new_post_path %></li>
               <li><%= link_to "投稿一覧", posts_path %></li>
@@ -14,12 +15,9 @@
               <li><%= link_to "マイページ", profile_path %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %></li>
             </ul>
-          </div>
-
-      <a class="flex-none text-xl px-4 font-semibold text-white" href="/" aria-label="Brand">
-      <%= link_to "作業のオトモ", root_path, class: "flex-none text-xl font-semibold text-white" %>
-      </a>
+        </div>
+      </div>
+      <%= link_to "作業のオトモ", root_path, class: "btn btn-ghost text-xl" %>
     </div>
-  </nav>
+  </div>
 </header>
-<!-- ========== END HEADER ========== -->

@@ -1,90 +1,15 @@
-<div class="card w-96 bg-base-100 shadow-xl">
+<div class="card w-96 bg-base-100 shadow-xl mt-6">
   <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
   <div class="card-body">
-    <h2 class="card-title">
-      <%= post.title %>
-      <div class="badge badge-secondary">NEW</div>
-    </h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions justify-end">
-      <div class="badge badge-outline">Fashion</div>
-      <div class="badge badge-outline">Products</div>
-    </div>
-          <% if action_name != "show" %>
-      <%= link_to "詳細", post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      <%= link_to "編集", edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-      <hr class="mt-6">
-      <% end %>
-
-  </div>
-</div>
-
-<%
-=begin%>
- <div id="<%= dom_id post %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">タイトル:</strong>
-    <%= post.title %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">ひとこと:</strong>
-    <%= post.body %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Image:</strong>
-    <%= post.image %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">カテゴリー:</strong>
-    <%= post.category %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">食べたことがある:</strong>
-    <%= post.eaten %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">匂いが気になる:</strong>
-    <%= post.smell %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">音が気になる:</strong>
-    <%= post.sound %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">こぼしやすい:</strong>
-    <%= post.spill %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "詳細", post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to "編集", edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
-</div>
-
-<div class="card w-96 bg-base-100 shadow-xl">
-  <figure class="px-10 pt-10">
-    <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" class="rounded-xl" />
-  </figure>
-  <div class="card-body items-center text-center">
     <h2 class="card-title"><%= post.title %></h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions">
-
-      <% if action_name != "show" %>
+      <% if post.smell || post.sound || post.spill %>
+        <p class="badge badge-secondary" >職場だと気になるかも？</p>
+      <% else %>
+        <p class="badge bg-primary" >職場でも気にならない！</p>
+      <% end %>
+    <div class="card-actions justify-end">
       <%= link_to "詳細", post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
       <%= link_to "編集", edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-      <hr class="mt-6">
-      <% end %>
     </div>
   </div>
-</div> 
-<%
-=end%>
+</div>

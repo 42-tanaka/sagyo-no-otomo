@@ -9,9 +9,9 @@
             <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
               <li><%= link_to "投稿する", new_post_path %></li>
               <li><%= link_to "投稿一覧", posts_path %></li>
-              <li><%= link_to "ラッキーアイテム", root_path %></a></li>
+              <li><%= link_to "ランダムピックアップ", posts_random_path %></a></li>
               <li><%= link_to "検索", root_path %></li>
-              <li><%= link_to "自分の投稿", my_posts_index_path %></li>
+              <li><%= link_to "自分の投稿一覧", posts_my_posts_path %></li>
               <li><%= link_to "マイページ", profile_path %></li>
               <li><%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %></li>
             </ul>

@@ -57,6 +57,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def random
+    @post = Post.order(Arel.sql('RANDOM()')).first
+  end
+
+  def my_posts
+    @posts = current_user.posts.order(created_at: :desc)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

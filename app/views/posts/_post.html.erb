@@ -1,6 +1,18 @@
-<div class="card w-96 bg-base-100 shadow-xl mt-6">
-  <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+
+<div class="card w-96 h-96 bg-base-100 shadow-xl mt-6">
+  <figure>
+  <%
+=begin%>
+ <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /> 
+<%
+=end%>
+  <%= image_tag post.image.url %>
+  </figure>
   <div class="card-body">
+    <div class="flex items-center">
+      <%= image_tag current_user.profile.avatar.url, size: '40x40'%>
+      <%= post.user.profile.name %>
+    </div>
     <h2 class="card-title"><%= post.title %></h2>
       <% if post.smell || post.sound || post.spill %>
         <p class="badge badge-secondary w-full" >職場だと気になるかも？</p>

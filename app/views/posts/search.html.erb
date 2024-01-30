@@ -1,46 +1,40 @@
-<div class="w-full flex flex-col md:flex-row">
-  <div class="w-full md:w-1/2">
-    <h1 class="font-bold text-2xl">絞り込み検索</h1>
+<div class="w-full">
+  <h1 class="font-bold text-2xl">絞り込み検索</h1>
 
-      <%= form_with url: search_posts_path, method: :get do |f| %>
+    <%= form_with url: search_posts_path, method: :get do |f| %>
 
-      <div class="my-5">
+      <div class="my-3">
         <%= f.check_box :eaten, { class: 'checkbox' }, '1', '0' %>
         <%= f.label :eaten, '食べたことがある' %>
       </div>
-      <div class="my-5">
+
+      <div class="my-3">
         <%= f.check_box :smell, { class: 'checkbox' }, '1', '0' %>
         <%= f.label :smell, '匂いが気になる' %>
       </div>
 
-      <div class="my-5">
+      <div class="my-3">
         <%= f.check_box :sound, { class: 'checkbox' }, '1', '0' %>
         <%= f.label :sound, '音がする' %>
       </div>
 
-      <div class="my-5">
+      <div class="my-3">
         <%= f.check_box :spill, { class: 'checkbox' }, '1', '0' %>
         <%= f.label :spill, 'こぼしやすい' %>
       </div>
 
-      <div class="my-5">
+      <div class="my-3">
         <%= f.select :category, [['食べ物', 0], ['飲み物', 1]], {}, { class: 'select select-bordered' } %>
       </div>
 
-      <div class="my-5">
+      <div class="my-3">
         <%= f.submit '検索',class: "btn btn-accent" %>
       </div>
-      <% end %>
-  </div>
-</div>
+    <% end %>
 
-  <div class="w-full md:w-1/2 flex justify-center">
+  <div class="grid grid-cols-1">
     <% if @posts.present? %>
-      <div class="grid grid-cols-1">
-
-        <%= render @posts %>
-
-      </div>
+      <%= render @posts %>
     <% else %>
       <p>該当する投稿はありません。</p>
     <% end %>

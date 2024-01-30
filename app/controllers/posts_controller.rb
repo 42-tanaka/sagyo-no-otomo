@@ -65,10 +65,25 @@ class PostsController < ApplicationController
     @posts = current_user.posts.order(created_at: :desc)
   end
 
+  def search
+    if params[:eaten].present? || params[:smell].present? || params[:sound].present? || params[:spill].present? || params[:category].present?
+      @posts = Post.all
+      @posts = @posts.where(eaten: params[:eaten] == '1') if params[:eaten].present?
+      @posts = @posts.where(smell: params[:smell] == '1') if params[:smell].present?
+      @posts = @posts.where(sound: params[:sound] == '1') if params[:sound].present?
+      @posts = @posts.where(spill: params[:spill] == '1') if params[:spill].present?
+      @posts = @posts.where(category: params[:category]) if params[:category].present?
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def filter_params
+      params.slice(:eaten, :smell, :sound, :spill, :category)
     end
 
     # Only allow a list of trusted parameters through.

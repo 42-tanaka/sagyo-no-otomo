@@ -1,4 +1,4 @@
-<%= form_with(model: post, class: "contents") do |form| %>
+<%= form_with(model: post, class: "contents") do |f| %>
   <% if post.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -12,50 +12,50 @@
 
 
   <div class="my-5">
-    <%= form.radio_button  :category, "food", class:"radio"  %>
-    <%= form.label :category_food, "食べ物" %>
+    <%= f.radio_button  :category, "food", class:"radio"  %>
+    <%= f.label :category_food, "食べ物" %>
 
-    <%= form.radio_button :category, "drink", class:"radio" %>
-    <%= form.label :category_drink, "飲み物" %>
+    <%= f.radio_button :category, "drink", class:"radio" %>
+    <%= f.label :category_drink, "飲み物" %>
   </div>
 
   <div class="my-5">
-    <%= form.check_box :eaten, class: "checkbox" %>
-    <%= form.label :eaten, "食べたことがある" %>
+    <%= f.check_box :eaten, class: "checkbox" %>
+    <%= f.label :eaten, "食べたことがある" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :title, "なまえ" %>
-    <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= f.label :title, "なまえ" %>
+    <%= f.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :body, "コメント" %>
-    <%= form.text_field :body, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= f.label :body, "コメント" %>
+    <%= f.text_field :body, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
   <div class="my-5">
-    <%= form.label :image, "画像" %>
-    <%= form.text_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+    <%= f.label :image, "画像" %>
+    <%= f.text_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
 職場では気になるかもしれないポイント
   <div class="my-5">
-    <%= form.check_box :smell, class: "checkbox" %>
-    <%= form.label :smell, "匂いがある" %>
+    <%= f.check_box :smell, class: "checkbox" %>
+    <%= f.label :smell, "匂いがある" %>
   </div>
 
   <div class="my-5">
-    <%= form.check_box :sound, class: "checkbox" %>
-    <%= form.label :sound, "音がする" %>
+    <%= f.check_box :sound, class: "checkbox" %>
+    <%= f.label :sound, "音がする" %>
   </div>
 
   <div class="my-5">
-    <%= form.check_box :spill, class: "checkbox" %>
-    <%= form.label :spill, "こぼしやすい" %>
+    <%= f.check_box :spill, class: "checkbox" %>
+    <%= f.label :spill, "こぼしやすい" %>
   </div>
 
   <div class="inline">
-    <%= form.submit "送信", class: "btn btn-primary" %>
+    <%= f.submit "送信", class: "btn btn-primary" %>
   </div>
 <% end %>

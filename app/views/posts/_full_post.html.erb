@@ -1,6 +1,6 @@
 <div class="card w-full sm:w-96 bg-base-100 shadow-xl mt-6 mx-4 sm:mx-auto">
-  <figure class="h-40">
-  <%= image_tag post.image.url(:index_size), class: "w-full h-full object-contain" %>
+  <figure class="aspect-w-16 aspect-h-9">
+  <%= image_tag post.image.url(:index_size), class: "object-contain" %>
   </figure>
   <div class="card-body">
     <div class="flex items-center mb-2">
@@ -36,7 +36,7 @@
       <% end %>
     </div>
 
-  <div class="rounded border p-2 text-sm mb-1" style="max-width: 300px;">
+  <div class="rounded border p-2 text-sm mb-1 w-full" >
     <%= post.body %>
   </div>
 

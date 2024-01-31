@@ -1,44 +1,46 @@
 <div class="card w-full sm:w-96 bg-base-100 shadow-xl mt-6 mx-4 sm:mx-auto">
-  <figure>
-  <%= image_tag post.image.url %>
+  <figure class="h-40">
+  <%= image_tag post.image.url(:index_size), class: "w-full h-full object-contain" %>
   </figure>
   <div class="card-body">
-    <div class="flex items-center">
-      <%= image_tag current_user.profile.avatar.url, size: '40x40'%>
+    <div class="flex items-center mb-2">
+      <%= image_tag current_user.profile.avatar.url, size: '40x40', class: "mr-2" %>
       <%= post.user.profile.name %>
     </div>
 
-    <h2 class="card-title"><%= post.title %></h2>
+    <h2 class="card-title text-lg h-8 mb-2 overflow-hidden"><%= post.title %></h2>
 
-    <div class="badge badge-accent">
+    <div class="badge badge-accent w-full h-8 flex items-center justify-center">
     <%= post.category == "food" ? "食べ物" : "飲み物"%>
     </div>
 
     <% if post.eaten %>
-      <p class="badge badge-outline">食べたことがある</p>
+      <p class="badge badge-outline w-full h-8 flex items-center justify-center">食べたことがある</p>
     <% else %>
-      <p class="badge" >食べたことはない</p>
+      <p class="badge w-full h-8 flex items-center justify-center" >食べたことはない</p>
     <% end %>
 
     <div class="card-actions justify-light">
       <% if post.smell || post.sound || post.spill %>
         <% if post.smell %>
-          <div class="badge badge-secondary  w-full flex">匂いがある</div>
+          <div class="badge badge-secondary w-full h-8 flex items-center justify-center">匂いがある</div>
         <% end %>
         <% if post.sound %>
-          <div class="badge badge-secondary  w-full flex">音がする</div>
+          <div class="badge badge-secondary w-full h-8 flex items-center justify-center">音がする</div>
         <% end %>
         <% if post.spill %>
-          <div class="badge badge-secondary  w-full flex">こぼしやすい</div>
+          <div class="badge badge-secondary  w-full h-8 flex items-center justify-center">こぼしやすい</div>
         <% end %>
       <% else %>
-        <p class="badge badge-primary w-full flex" >職場でも気にならない！</p>
+        <p class="badge badge-primary w-full h-8 flex items-center justify-center" >職場でも気にならない！</p>
       <% end %>
     </div>
 
+  <div class="rounded border p-2 text-sm mb-1" style="max-width: 300px;">
     <%= post.body %>
+  </div>
 
-    <div class="card-actions flex justify-end">
+    <div class="card-actions justify-end mt-4">
       <%= link_to "編集", edit_post_path(post), class: "btn btn-ghost mr-1" %>
       <%= button_to "削除", post_path(post), method: :delete,  class: "btn btn-ghost mr-1" %>
       <%= link_to "一覧に戻る", posts_path, class: "btn btn-ghost" %>

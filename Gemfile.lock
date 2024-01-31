@@ -307,6 +307,7 @@ DEPENDENCIES
   dotenv-rails
   importmap-rails
   jbuilder
+  mini_magick
   omniauth-line
   omniauth-rails_csrf_protection
   pg (~> 1.1)

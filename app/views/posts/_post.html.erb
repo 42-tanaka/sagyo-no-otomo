@@ -1,25 +1,19 @@
-
-<div class="card w-96 h-96 bg-base-100 shadow-xl mt-6">
-  <figure>
-  <%
-=begin%>
- <img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /> 
-<%
-=end%>
-  <%= image_tag post.image.url %>
+<div class="card w-96 h-96 bg-base-100 shadow-xl mt-6 ">
+  <figure class="h-40">
+  <%= image_tag post.image.url(:index_size), class: "w-full object-cover" %>
   </figure>
-  <div class="card-body">
-    <div class="flex items-center">
-      <%= image_tag current_user.profile.avatar.url, size: '40x40'%>
+  <div class="card-body ">
+    <div class="flex items-center mb-2">
+      <%= image_tag current_user.profile.avatar.url, size: '40x40', class: "mr-2" %>
       <%= post.user.profile.name %>
     </div>
-    <h2 class="card-title"><%= post.title %></h2>
+    <h2 class="card-title text-lg h-8 mb-2 overflow-hidden"><%= post.title %></h2>
       <% if post.smell || post.sound || post.spill %>
-        <p class="badge badge-secondary w-full" >職場だと気になるかも？</p>
+        <div class="badge badge-secondary w-full h-8 flex items-center justify-center">職場だと気になるかも？</div>
       <% else %>
-        <p class="badge bg-primary w-full" >職場でも気にならない！</p>
+        <div class="badge badge-primary w-full h-8 flex items-center justify-center">職場でも気にならない！</div>
       <% end %>
-    <div class="card-actions justify-end">
+    <div class="card-actions justify-end mt-4">
       <%= link_to "詳細", post, class:"btn btn-accent" %>
     </div>
   </div>

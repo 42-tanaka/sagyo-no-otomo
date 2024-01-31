@@ -4,7 +4,7 @@
   </figure>
   <div class="card-body">
     <div class="flex items-center mb-2">
-      <%= image_tag current_user.profile.avatar.url, size: '40x40', class: "mr-2" %>
+      <%= image_tag current_user.profile.avatar.url(:index_size), size: '40x40', class: "mr-2" %>
       <%= post.user.profile.name %>
     </div>
 

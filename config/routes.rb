@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'posts/random'
   get 'posts/my_posts'
 
+  patch 'users/update_notification_settings', to: 'users#update_notification_settings', as: 'update_notification_settings'
+
   root "tops#index"
 
   devise_for :users, controllers: {

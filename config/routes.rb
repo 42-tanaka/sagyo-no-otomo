@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
     omniauth_callbacks: 'omniauth_callbacks',
-    #sessions: 'sessions'  ログアウト機能はdeviseのみで可能
+    # sessions: 'sessions'  ログアウト機能はdeviseのみで可能
   }
 
   resources :posts do

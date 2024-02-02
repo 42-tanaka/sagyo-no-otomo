@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {
     omniauth_callbacks: 'omniauth_callbacks',
-    # sessions: 'sessions'  ログアウト機能はdeviseのみで可能
+    sessions: 'users/sessions'
   }
 
   resources :posts do

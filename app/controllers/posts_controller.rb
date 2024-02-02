@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :store_user_return_to, only: [:random]
 
   # GET /posts or /posts.json
   def index
@@ -77,7 +78,7 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_post
       @post = Post.find(params[:id])
     end
@@ -86,7 +87,10 @@ class PostsController < ApplicationController
       params.slice(:eaten, :smell, :sound, :spill, :category)
     end
 
-    # Only allow a list of trusted parameters through.
+    def store_user_return_to
+      session[:user_return_to] = posts_random_url if current_user.nil?
+    end
+
     def post_params
       params.require(:post).permit(:title, :body, :image, :category, :eaten, :smell, :sound, :spill)
     end

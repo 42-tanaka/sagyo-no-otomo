@@ -1,15 +1,21 @@
 <div>
   <h1 class="font-bold text-2xl">マイページ</h1>
-<br>
-  <p>ユーザー名</p>
-<br>
-  <p><%= current_user.profile.name %></p>
-<br>
-  <p>アバター画像</p>
-<br>
-  <p><%= image_tag current_user.profile.avatar.url, size: '100x100'%></p>
-<br>
-  <button class="btn btn-secondary">
-  <%= link_to "変更する", edit_profile_path %>
-  </button>
+  <br>
+    <p>ユーザー名</p>
+  <br>
+    <p><%= current_user.profile.name %></p>
+  <br>
+    <p>アバター画像</p>
+  <br>
+    <p><%= image_tag current_user.profile.avatar.url, size: '100x100'%></p>
+  <br>
+    <button class="btn btn-secondary">
+    <%= link_to "変更する", edit_profile_path %>
+    </button>
+
+  <br>
+  <p>LINE通知の受け取り</p>
+    <p><%= current_user.line_notifications %></p>
+  <br>
+
 </div>

@@ -22,6 +22,6 @@ class SendLineNotificationJob < ApplicationJob
       text: "今日のランダムピックアップ: https://sagyo-no-otomo-fd2222903b9e.herokuapp.com/posts/random"
     }
 
-    client.push_message(user.line_user_id, message)
+    client.push_message(user.uid, message)
   end
 end

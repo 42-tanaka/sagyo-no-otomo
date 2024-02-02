@@ -12,10 +12,5 @@
   <%= link_to "ログアウト", destroy_user_session_path,
   class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium", data: { turbo_method: :delete } %>
 <br>
-
-<% if user_signed_in? %>
-  <%= form_with url: update_notification_settings_path, method: :patch do %>
-    <%= hidden_field_tag :line_notifications, !current_user.line_notifications %>
-    <%= submit_tag(current_user.line_notifications ? 'LINE通知をオフにする' : 'LINE通知を受け取る', class: 'btn btn-primary') %>
-  <% end %>
-<% end %>
+友達登録をしてプッシュ通知を受け取る
+<%= image_tag 'sagyo-no-otomo_qr.png', size: '200x200'%>

@@ -13,9 +13,11 @@
     <%= link_to "変更する", edit_profile_path %>
     </button>
 
-  <br>
-  <p>LINE通知の受け取り</p>
-    <p><%= current_user.line_notifications %></p>
-  <br>
+  <% if user_signed_in? %>
+    <%= form_with url: update_notification_settings_path, method: :patch do %>
+      <%= hidden_field_tag :line_notifications, !current_user.line_notifications %>
+      <%= submit_tag(current_user.line_notifications ? 'LINE通知をオフにする' : 'LINE通知を受け取る', class: 'btn btn-primary') %>
+    <% end %>
+  <% end %>
 
 </div>

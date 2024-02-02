@@ -17,9 +17,8 @@ class LineNotificationsController < ApplicationController
 
     message = {
       type: 'text',
-      text: "今日のランダムピックアップ: #{Rails.application.routes.url_helpers.posts_random_url(host: 'sagyo-no-otomo-fd2222903b9e.herokuapp.com')}
+      text: "今日のランダムピックアップをみる:
       https://sagyo-no-otomo-fd2222903b9e.herokuapp.com/posts/random
-      http://localhost:3000/posts/random
       "
     }
 

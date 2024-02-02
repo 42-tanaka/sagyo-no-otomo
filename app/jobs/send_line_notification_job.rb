@@ -4,7 +4,7 @@ class SendLineNotificationJob < ApplicationJob
   queue_as :default
 
   def perform
-    User.where(receive_line_notifications: true).find_each do |user|
+    User.where(line_notifications: true).find_each do |user|
       send_line_notification(user)
     end
   end

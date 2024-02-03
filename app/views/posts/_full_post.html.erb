@@ -1,4 +1,5 @@
-<div class="card w-full sm:w-96 bg-base-100 shadow-xl mt-6 mx-4 sm:mx-auto">
+<div class="card w-full max-w-lg bg-base-100 shadow-xl mt-6 mx-auto">
+
   <figure class="aspect-w-4 aspect-h-5">
   <%= image_tag post.image.url(:index_size), class: "object-contain" %>
   </figure>
@@ -8,7 +9,7 @@
       <%= post.user.profile.name %>
     </div>
 
-    <h2 class="card-title text-lg h-8 mb-2 overflow-hidden"><%= post.title %></h2>
+    <h2 class="card-title text-lg h-8 mb-2"><%= post.title %></h2>
 
     <div class="badge badge-accent w-full h-8 flex items-center justify-center">
     <%= post.category == "food" ? "食べ物" : "飲み物"%>

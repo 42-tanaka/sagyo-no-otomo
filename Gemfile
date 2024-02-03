@@ -91,3 +91,5 @@ gem "aws-sdk-s3", require: false
 gem 'dotenv-rails'
 
 gem 'line-bot-api'
+
+gem 'kaminari'

@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.order(created_at: :desc).page(params[:page])
   end
 
   # GET /posts/1 or /posts/1.json
@@ -63,7 +63,7 @@ class PostsController < ApplicationController
   end
 
   def my_posts
-    @posts = current_user.posts.order(created_at: :desc)
+    @posts = current_user.posts.order(created_at: :desc).page(params[:page])
   end
 
   def search

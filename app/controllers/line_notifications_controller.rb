@@ -17,9 +17,7 @@ class LineNotificationsController < ApplicationController
 
     message = {
       type: 'text',
-      text: "今日のランダムピックアップをみる:
-      https://sagyo-no-otomo-fd2222903b9e.herokuapp.com/posts/random
-      "
+      text: "今日のランダムピックアップを見る: https://sagyo-no-otomo-fd2222903b9e.herokuapp.com/posts/random"
     }
 
     response = client.push_message(user.uid, message)

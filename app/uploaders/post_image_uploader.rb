@@ -39,7 +39,7 @@ class PostImageUploader < CarrierWave::Uploader::Base
   # end
 
   version :index_size do
-    process resize_and_pad: [1600, 900, '#f5ebdc', 'Center']
+    process resize_and_pad: [1080, 1350, '#f5ebdc', 'Center']
     process :convert_to_webp
   end
 

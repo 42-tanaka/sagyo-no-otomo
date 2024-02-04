@@ -1,4 +1,10 @@
 class TopsController < ApplicationController
-  def index
+  def show
+  end
+
+  def terms_of_service
+  end
+
+  def privacy_policy
   end
 end

@@ -1,4 +1,4 @@
-<div class="card w-full max-w-lg bg-base-100 shadow-xl mt-6 mx-auto">
+<div class="card w-full max-w-lg bg-base-100 shadow-xl my-6 mx-auto">
   <figure class="aspect-w-4 aspect-h-5">
   <%= image_tag post.image.url(:index_size), class: "object-cover" %>
   </figure>
@@ -11,10 +11,10 @@
       <% if post.smell || post.sound || post.spill %>
         <div class="badge badge-secondary w-full h-8 flex items-center justify-center">職場だと気になるかも？</div>
       <% else %>
-        <div class="badge badge-primary w-full h-8 flex items-center justify-center">職場でも気にならない！</div>
+        <div class="badge badge-accent w-full h-8 flex items-center justify-center">職場でも気にならない！</div>
       <% end %>
     <div class="card-actions justify-end mt-4">
-      <%= link_to "詳細", post, class:"btn btn-accent" %>
+      <%= link_to "詳細", post, class:"btn btn-primary" %>
     </div>
   </div>
 </div>

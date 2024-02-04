@@ -4,17 +4,70 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-  *以下のリンクは仮置き
-  <br>
-    <%= link_to "LINEログイン", user_line_omniauth_authorize_path,
-    class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium", method: :post %>
-  <br>
-    <%= link_to "ログアウト", destroy_user_session_path,
-    class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium", data: { turbo_method: :delete } %>
-  <br>
-  友達登録をしてプッシュ通知を受け取る
-  <%= image_tag 'sagyo-no-otomo_qr.png', size: '200x200'%>
 
+<h1>作業のオトモ</h1><p>は、「匂い」「音」「こぼしやすさ」といった、デスクワーク中だと気になってしまうポイントと一緒に、</p>
+<p>デスクワーク中に食べたお菓子や飲み物を記録・シェアするサービスです。</p>
+
+
+<div class="my-2">できること</div>
+    <div class="collapse collapse-arrow bg-base-200 mb-2">
+      <input type="checkbox" id="collapse1" class="peer" />
+      <label for="collapse1" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
+        デスクワーク中に食べたお菓子や飲み物をシェアする
+      </label>
+      <div class="collapse-content peer-checked:block hidden">
+        <p>投稿機能</p>
+        <p>「匂い」「音」「こぼしやすさ」といった、デスクワーク中だと気になるポイントを、画像やコメントと一緒に投稿することできます。</p>
+        <p>投稿一覧</p>
+        <p>ユーザーの投稿を一覧で見ることができます。</p>
+      </div>
+    </div>
+
+    <div class="collapse collapse-arrow bg-base-200 mb-2">
+      <input type="checkbox" id="collapse2" class="peer" />
+      <label for="collapse2" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
+        自分が食べたお菓子や飲み物を見返す
+      </label>
+      <div class="collapse-content peer-checked:block hidden">
+        <p>自分の投稿一覧</p>
+        <p>自分が投稿したお菓子や飲み物を、まとめて見返すことができます。</p>
+      </div>
+    </div>
+
+    <div class="collapse collapse-arrow bg-base-200 mb-2">
+      <input type="checkbox" id="collapse3" class="peer" />
+      <label for="collapse3" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
+        条件を絞って探す
+      </label>
+      <div class="collapse-content peer-checked:block hidden">
+        <p>「匂い」「音」「こぼしやすさ」といった、デスクワーク中だと気になるポイントを絞り込んで検索することができます。</p>
+      </div>
+    </div>
+
+    <div class="collapse collapse-arrow bg-base-200 mb-2">
+      <input type="checkbox" id="collapse4" class="peer" />
+      <label for="collapse4" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
+      ランダムに見つける
+      </label>
+      <div class="collapse-content peer-checked:block hidden">
+        <p>ランダムピックアップ</p>
+        <p>全ての投稿からランダムに１件ピックアップされます。まだ何をお供にするか決まっていない時、ランダムな出会いで選びませんか？</p>
+        <p>LINEプッシュ通知</p>
+        <p>以下のQRコードから友だち追加すると、毎日お昼12時にランダムピックアップのURLが届きます。その日の作業のお供を選ぶ参考にしませんか？</p>
+        <%= image_tag 'sagyo-no-otomo_qr.png', size: '100x100'%>
+    </div>
+  </div>
+
+    <div class="collapse collapse-arrow bg-base-200 mb-2">
+      <input type="checkbox" id="collapse5" class="peer" />
+      <label for="collapse5" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
+      LINEでログインしてユーザー登録する
+      </label>
+      <div class="collapse-content peer-checked:block hidden">
+        <p>LINEログイン</p>
+        <p>メールやパスワード入力なしでログインできます。ログイン後にユーザー名とアバター画像を登録できます。</p>
+        <p>マイページ</p>
+        <p>ユーザー名、アバター画像、LINEプッシュ通知の受け取るかどうかを変更できます。</p>
+        <%= image_tag 'sagyo-no-otomo_qr.png', size: '100x100'%>
+    </div>
 </div>
-
-

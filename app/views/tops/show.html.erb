@@ -21,33 +21,44 @@
 
     <div class="collapse collapse-arrow bg-base-200 mb-2">
       <input type="checkbox" id="collapse5" class="peer" />
-      <label for="collapse5" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
+      <label for="collapse5" class="collapse-title text-lg font-medium peer-checked:bg-secondary peer-checked:text-primary-content">
       LINEでログインしてユーザー登録する
       </label>
       <div class="collapse-content peer-checked:block hidden">
         <div class="font-bold text-lg my-1">LINEログイン</div>
         <p>メールやパスワード入力なしでログインできます。ログイン後にユーザー名とアバター画像を登録できます。</p>
+        <%= image_tag 'sample_profile_form.png'%>
         <div class="font-bold text-lg my-1">マイページ</div>
         <p>ユーザー名、アバター画像、LINEプッシュ通知の受け取るかどうかを変更できます。</p>
+        <%= image_tag 'sample_mypage.png'%>
     </div>
   </div>
 
     <div class="collapse collapse-arrow bg-base-200 mb-2">
       <input type="checkbox" id="collapse1" class="peer" />
-      <label for="collapse1" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
+      <label for="collapse1" class="collapse-title text-lg font-medium peer-checked:bg-secondary peer-checked:text-primary-content">
         デスクワーク中に食べたお菓子や飲み物をシェアする
       </label>
       <div class="collapse-content peer-checked:block hidden">
         <div class="font-bold text-lg my-1">投稿する</div>
         <p>「匂い」「音」「こぼしやすさ」といった、デスクワーク中だと気になるポイントを、画像やコメントと一緒に投稿することできます。</p>
+        <div class="flex gap-x-4">
+          <div class="object-contain">
+            <%= image_tag 'sample_post_form.png'%>
+          </div>
+          <div class="object-contain">
+            <%= image_tag 'sample_post.png'%>
+          </div>
+        </div>
         <div class="font-bold text-lg my-1">投稿一覧</div>
         <p>職場で食べるとき気になるかどうかに注目して、ユーザーの投稿を一覧で見ることができます。</p>
+        <%= image_tag 'sample_posts.png'%>
       </div>
     </div>
 
     <div class="collapse collapse-arrow bg-base-200 mb-2">
       <input type="checkbox" id="collapse4" class="peer" />
-      <label for="collapse4" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
+      <label for="collapse4" class="collapse-title text-lg font-medium peer-checked:bg-secondary peer-checked:text-primary-content">
       ランダムに見つける
       </label>
       <div class="collapse-content peer-checked:block hidden">
@@ -61,18 +72,19 @@
 
     <div class="collapse collapse-arrow bg-base-200 mb-2">
       <input type="checkbox" id="collapse3" class="peer" />
-      <label for="collapse3" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
+      <label for="collapse3" class="collapse-title text-lg font-medium peer-checked:bg-secondary peer-checked:text-primary-content">
         条件を絞って探す
       </label>
       <div class="collapse-content peer-checked:block hidden">
         <div class="font-bold text-lg my-1">絞り込み検索</div>
         <p>「匂い」「音」「こぼしやすさ」といった、職場でのデスクワーク中だと気になるポイントを絞り込んで検索することができます。</p>
+        <%= image_tag 'sample_search.png'%>
       </div>
     </div>
 
     <div class="collapse collapse-arrow bg-base-200 mb-2">
       <input type="checkbox" id="collapse2" class="peer" />
-      <label for="collapse2" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
+      <label for="collapse2" class="collapse-title text-lg font-medium peer-checked:bg-secondary peer-checked:text-primary-content">
         自分が食べたお菓子や飲み物を見返す
       </label>
       <div class="collapse-content peer-checked:block hidden">

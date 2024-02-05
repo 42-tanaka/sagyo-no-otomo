@@ -1,9 +1,21 @@
 <div class="container mx-auto">
 
-<div class="text-2xl">作業のオトモ</div>
-<p>は、デスクワーク作業のお供に食べたお菓子や飲み物を</p>
-<p>「匂い」「音」「こぼしやすさ」といった、職場だと気になってしまうポイントと一緒に、記録・シェアするサービスです。</p>
+<div class="card bg-accent text-primary-content">
+  <div class="card-body">
+    <h2 class="card-title text-2xl mb-3">このサイトについて</h2>
+    <p>デスクワーク作業のお供に食べたお菓子や飲み物を、「匂い」「音」「こぼしやすさ」といった</p>
+    <p>職場だと気になってしまうポイントと一緒に、記録・シェアするサービスです。</p>
 
+    <div class="card-actions justify-left mt-3">
+      <% if user_signed_in? %>
+        <button class="btn"><%= link_to "投稿を見にいく", posts_path %></button>
+      <% else %>
+        <button class="btn"><%= link_to "LINEログイン", user_line_omniauth_authorize_path %></button>
+      <% end %>
+    </div>
+
+  </div>
+</div>
 
 <div class="my-4">このサイトの使い方・できること</div>
 
@@ -13,11 +25,12 @@
       LINEでログインしてユーザー登録する
       </label>
       <div class="collapse-content peer-checked:block hidden">
-        <p>LINEログイン</p>
+        <div class="font-bold text-lg my-1">LINEログイン</div>
         <p>メールやパスワード入力なしでログインできます。ログイン後にユーザー名とアバター画像を登録できます。</p>
-        <p>マイページ</p>
+        <div class="font-bold text-lg my-1">マイページ</div>
         <p>ユーザー名、アバター画像、LINEプッシュ通知の受け取るかどうかを変更できます。</p>
     </div>
+  </div>
 
     <div class="collapse collapse-arrow bg-base-200 mb-2">
       <input type="checkbox" id="collapse1" class="peer" />
@@ -25,32 +38,10 @@
         デスクワーク中に食べたお菓子や飲み物をシェアする
       </label>
       <div class="collapse-content peer-checked:block hidden">
-        <p>投稿機能</p>
+        <div class="font-bold text-lg my-1">投稿する</div>
         <p>「匂い」「音」「こぼしやすさ」といった、デスクワーク中だと気になるポイントを、画像やコメントと一緒に投稿することできます。</p>
-        <p>投稿一覧</p>
+        <div class="font-bold text-lg my-1">投稿一覧</div>
         <p>職場で食べるとき気になるかどうかに注目して、ユーザーの投稿を一覧で見ることができます。</p>
-      </div>
-    </div>
-
-    <div class="collapse collapse-arrow bg-base-200 mb-2">
-      <input type="checkbox" id="collapse2" class="peer" />
-      <label for="collapse2" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
-        自分が食べたお菓子や飲み物を見返す
-      </label>
-      <div class="collapse-content peer-checked:block hidden">
-        <p>自分の投稿一覧</p>
-        <p>自分が投稿したお菓子や飲み物を、まとめて見返すことができます。</p>
-      </div>
-    </div>
-
-    <div class="collapse collapse-arrow bg-base-200 mb-2">
-      <input type="checkbox" id="collapse3" class="peer" />
-      <label for="collapse3" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
-        条件を絞って探す
-      </label>
-      <div class="collapse-content peer-checked:block hidden">
-        <p>絞り込み検索</p>
-        <p>「匂い」「音」「こぼしやすさ」といった、職場でのデスクワーク中だと気になるポイントを絞り込んで検索することができます。</p>
       </div>
     </div>
 
@@ -60,12 +51,34 @@
       ランダムに見つける
       </label>
       <div class="collapse-content peer-checked:block hidden">
-        <p>ランダムピックアップ</p>
+        <div class="font-bold text-lg my-1">ランダムピックアップ</div>
         <p>全ての投稿からランダムに１件ピックアップされます。作業のお供がまだ決まっていない時、ランダムな出会いで選びませんか？</p>
-        <p>LINEプッシュ通知</p>
-        <p>以下のQRコードから友だち追加すると、毎日お昼12時にランダムピックアップのURLが届きます。その日の作業のお供を候補の見に行きませんか？</p>
+        <div class="font-bold text-lg my-1">LINEプッシュ通知</div>
+        <p>以下のQRコードから友だち追加すると、毎日お昼12時にランダムピックアップのURLが届きます。午後からの作業のお供の候補を見に行きませんか？</p>
         <%= image_tag 'sagyo-no-otomo_qr.png', size: '100x100'%>
     </div>
   </div>
+
+    <div class="collapse collapse-arrow bg-base-200 mb-2">
+      <input type="checkbox" id="collapse3" class="peer" />
+      <label for="collapse3" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
+        条件を絞って探す
+      </label>
+      <div class="collapse-content peer-checked:block hidden">
+        <div class="font-bold text-lg my-1">絞り込み検索</div>
+        <p>「匂い」「音」「こぼしやすさ」といった、職場でのデスクワーク中だと気になるポイントを絞り込んで検索することができます。</p>
+      </div>
+    </div>
+
+    <div class="collapse collapse-arrow bg-base-200 mb-2">
+      <input type="checkbox" id="collapse2" class="peer" />
+      <label for="collapse2" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
+        自分が食べたお菓子や飲み物を見返す
+      </label>
+      <div class="collapse-content peer-checked:block hidden">
+        <div class="font-bold text-lg my-1">自分の投稿一覧</div>
+        <p>自分が投稿したお菓子や飲み物を、まとめて見返すことができます。</p>
+      </div>
+    </div>
 
 </div>

@@ -68,7 +68,7 @@ class PostsController < ApplicationController
 
   def search
     if params[:eaten].present? || params[:smell].present? || params[:sound].present? || params[:spill].present? || params[:category].present?
-      @posts = Post.all.order(created_at: :desc)
+      @posts = Post.all.order(created_at: :desc).page(params[:page])
       @posts = @posts.where(eaten: params[:eaten] == '1') if params[:eaten].present?
       @posts = @posts.where(smell: params[:smell] == '1') if params[:smell].present?
       @posts = @posts.where(sound: params[:sound] == '1') if params[:sound].present?

@@ -9,14 +9,14 @@
   <br>
     <p><%= image_tag current_user.profile.avatar.url, size: '100x100'%></p>
   <br>
-    <button class="btn btn-secondary">
+    <button class="btn btn-primary">
     <%= link_to "変更する", edit_profile_path %>
     </button>
 
   <% if user_signed_in? %>
     <%= form_with url: update_notification_settings_path, method: :patch do %>
       <%= hidden_field_tag :line_notifications, !current_user.line_notifications %>
-      <%= submit_tag(current_user.line_notifications ? 'LINE通知をオフにする' : 'LINE通知を受け取る', class: 'btn btn-primary') %>
+      <%= submit_tag(current_user.line_notifications ? 'LINE通知をオフにする' : 'LINE通知を受け取る', class: 'btn btn-secondary mt-4') %>
     <% end %>
   <% end %>
 

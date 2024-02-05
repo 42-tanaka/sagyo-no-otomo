@@ -1,15 +1,24 @@
-
 <div class="container mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-    <% end %>
+
+<div class="text-2xl">作業のオトモ</div>
+<p>は、デスクワーク作業のお供に食べたお菓子や飲み物を</p>
+<p>「匂い」「音」「こぼしやすさ」といった、職場だと気になってしまうポイントと一緒に、記録・シェアするサービスです。</p>
 
 
-<h1>作業のオトモ</h1><p>は、「匂い」「音」「こぼしやすさ」といった、デスクワーク中だと気になってしまうポイントと一緒に、</p>
-<p>デスクワーク中に食べたお菓子や飲み物を記録・シェアするサービスです。</p>
+<div class="my-4">このサイトの使い方・できること</div>
 
+    <div class="collapse collapse-arrow bg-base-200 mb-2">
+      <input type="checkbox" id="collapse5" class="peer" />
+      <label for="collapse5" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
+      LINEでログインしてユーザー登録する
+      </label>
+      <div class="collapse-content peer-checked:block hidden">
+        <p>LINEログイン</p>
+        <p>メールやパスワード入力なしでログインできます。ログイン後にユーザー名とアバター画像を登録できます。</p>
+        <p>マイページ</p>
+        <p>ユーザー名、アバター画像、LINEプッシュ通知の受け取るかどうかを変更できます。</p>
+    </div>
 
-<div class="my-2">できること</div>
     <div class="collapse collapse-arrow bg-base-200 mb-2">
       <input type="checkbox" id="collapse1" class="peer" />
       <label for="collapse1" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
@@ -19,7 +28,7 @@
         <p>投稿機能</p>
         <p>「匂い」「音」「こぼしやすさ」といった、デスクワーク中だと気になるポイントを、画像やコメントと一緒に投稿することできます。</p>
         <p>投稿一覧</p>
-        <p>ユーザーの投稿を一覧で見ることができます。</p>
+        <p>職場で食べるとき気になるかどうかに注目して、ユーザーの投稿を一覧で見ることができます。</p>
       </div>
     </div>
 
@@ -40,7 +49,8 @@
         条件を絞って探す
       </label>
       <div class="collapse-content peer-checked:block hidden">
-        <p>「匂い」「音」「こぼしやすさ」といった、デスクワーク中だと気になるポイントを絞り込んで検索することができます。</p>
+        <p>絞り込み検索</p>
+        <p>「匂い」「音」「こぼしやすさ」といった、職場でのデスクワーク中だと気になるポイントを絞り込んで検索することができます。</p>
       </div>
     </div>
 
@@ -51,23 +61,11 @@
       </label>
       <div class="collapse-content peer-checked:block hidden">
         <p>ランダムピックアップ</p>
-        <p>全ての投稿からランダムに１件ピックアップされます。まだ何をお供にするか決まっていない時、ランダムな出会いで選びませんか？</p>
+        <p>全ての投稿からランダムに１件ピックアップされます。作業のお供がまだ決まっていない時、ランダムな出会いで選びませんか？</p>
         <p>LINEプッシュ通知</p>
-        <p>以下のQRコードから友だち追加すると、毎日お昼12時にランダムピックアップのURLが届きます。その日の作業のお供を選ぶ参考にしませんか？</p>
+        <p>以下のQRコードから友だち追加すると、毎日お昼12時にランダムピックアップのURLが届きます。その日の作業のお供を候補の見に行きませんか？</p>
         <%= image_tag 'sagyo-no-otomo_qr.png', size: '100x100'%>
     </div>
   </div>
 
-    <div class="collapse collapse-arrow bg-base-200 mb-2">
-      <input type="checkbox" id="collapse5" class="peer" />
-      <label for="collapse5" class="collapse-title text-lg font-medium peer-checked:bg-primary peer-checked:text-primary-content">
-      LINEでログインしてユーザー登録する
-      </label>
-      <div class="collapse-content peer-checked:block hidden">
-        <p>LINEログイン</p>
-        <p>メールやパスワード入力なしでログインできます。ログイン後にユーザー名とアバター画像を登録できます。</p>
-        <p>マイページ</p>
-        <p>ユーザー名、アバター画像、LINEプッシュ通知の受け取るかどうかを変更できます。</p>
-        <%= image_tag 'sagyo-no-otomo_qr.png', size: '100x100'%>
-    </div>
 </div>

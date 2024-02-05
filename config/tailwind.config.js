@@ -12,7 +12,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-        body: ['YuGothic',],
+        body: ['YuGothic','Yu Gothic',],
       },
     },
   },

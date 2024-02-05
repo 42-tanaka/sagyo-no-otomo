@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        body: ['YuGothic','Yu Gothic',],
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },
   },

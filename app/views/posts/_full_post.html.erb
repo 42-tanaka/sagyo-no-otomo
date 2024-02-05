@@ -1,4 +1,4 @@
-<div class="card w-full max-w-lg bg-base-100 shadow-xl mt-6 mx-auto">
+<div class="card w-full max-w-lg bg-base-100 shadow-xl my-6 mx-auto">
   <figure class="aspect-w-4 aspect-h-5">
   <%= image_tag post.image.url(:index_size), class: "object-contain" %>
   </figure>
@@ -36,11 +36,11 @@
       <% end %>
     </div>
 
-  <div class="rounded border p-2 text-sm mb-1 w-full" >
+  <div class="rounded border p-3 text-sm my-2 w-full" >
     <%= post.body %>
   </div>
 
-    <div class="card-actions justify-end mt-4">
+    <div class="card-actions justify-end mt-2">
       <%= link_to "編集", edit_post_path(post), class: "btn btn-ghost mr-1" %>
       <%= button_to "削除", post_path(post), method: :delete,  class: "btn btn-ghost mr-1" %>
       <%= link_to "一覧に戻る", posts_path, class: "btn btn-ghost" %>

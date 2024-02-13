@@ -41,8 +41,10 @@
   </div>
 
     <div class="card-actions justify-end mt-2">
+    <% if current_user.own?(post) %>
       <%= link_to "編集", edit_post_path(post), class: "btn btn-ghost mr-1" %>
       <%= button_to "削除", post_path(post), method: :delete,  class: "btn btn-ghost mr-1" %>
+      <% end %>
       <%= link_to "一覧に戻る", posts_path, class: "btn btn-ghost" %>
     </div>
   </div>

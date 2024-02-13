@@ -1,13 +1,15 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ edit update destroy ]
   before_action :store_user_return_to, only: [:random]
 
   def index
     @posts = Post.order(created_at: :desc).page(params[:page])
   end
 
-  def show; end
+  def show
+    @post = Post.find(params[:id])
+  end
 
   def new
     @post = Post.new
@@ -71,7 +73,7 @@ class PostsController < ApplicationController
   private
 
     def set_post
-      @post = Post.find(params[:id])
+      @post = current_user.posts.find(params[:id])
     end
 
     def filter_params

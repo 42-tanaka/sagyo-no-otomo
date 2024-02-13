@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :store_user_return_to, only: [:random]
 
   def index
-    @posts = Post.order(created_at: :desc).page(params[:page])
+    @posts = Post.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def show
@@ -76,9 +76,9 @@ class PostsController < ApplicationController
       @post = current_user.posts.find(params[:id])
     end
 
-    def filter_params
-      params.slice(:eaten, :smell, :sound, :spill, :category)
-    end
+    # def filter_params
+    #   params.slice(:eaten, :smell, :sound, :spill, :category)
+    # end
 
     def store_user_return_to
       session[:user_return_to] = posts_random_url if current_user.nil?

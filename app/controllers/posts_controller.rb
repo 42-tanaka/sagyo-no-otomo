@@ -60,30 +60,31 @@ class PostsController < ApplicationController
     @posts = current_user.posts.order(created_at: :desc).page(params[:page])
   end
 
-  def search ;end
+  def search; end
 
   private
 
-    def set_post
-      @post = current_user.posts.find(params[:id])
-    end
+  def set_post
+    @post = current_user.posts.find(params[:id])
+  end
 
-    def search_post
-      if params[:eaten].present? || params[:smell].present? || params[:sound].present? || params[:spill].present? || params[:category].present?
-        @posts = Post.all.order(created_at: :desc).page(params[:page])
-        @posts = @posts.where(eaten: params[:eaten] == '1') if params[:eaten].present?
-        @posts = @posts.where(smell: params[:smell] == '1') if params[:smell].present?
-        @posts = @posts.where(sound: params[:sound] == '1') if params[:sound].present?
-        @posts = @posts.where(spill: params[:spill] == '1') if params[:spill].present?
-        @posts = @posts.where(category: params[:category]) if params[:category].present?
-      end
+  def search_post
+    if params[:eaten].present? || params[:smell].present? || params[:sound].present? || params[:spill].present? || params[:category].present?
+      @posts = Post.all.order(created_at: :desc).page(params[:page])
+      @posts = @posts.where(eaten: params[:eaten] == '1') if params[:eaten].present?
+      @posts = @posts.where(smell: params[:smell] == '1') if params[:smell].present?
+      @posts = @posts.where(sound: params[:sound] == '1') if params[:sound].present?
+      @posts = @posts.where(spill: params[:spill] == '1') if params[:spill].present?
+      @posts = @posts.where(category: params[:category]) if params[:category].present?
+      @posts.all.order(created_at: :desc).page(params[:page])
     end
+  end
 
-    def store_user_return_to
-      session[:user_return_to] = posts_random_url if current_user.nil?
-    end
+  def store_user_return_to
+    session[:user_return_to] = posts_random_url if current_user.nil?
+  end
 
-    def post_params
-      params.require(:post).permit(:title, :body, :image, :category, :eaten, :smell, :sound, :spill)
-    end
+  def post_params
+    params.require(:post).permit(:title, :body, :image, :category, :eaten, :smell, :sound, :spill)
+  end
 end

@@ -31,11 +31,14 @@
         <%= f.submit '検索',class: "btn btn-accent" %>
       </div>
     <% end %>
+</div>
+
+
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
     <% if @posts.present? %>
       <%= render @posts %>
-      <div >
+      <div>
         <%= paginate @posts, class: "flex justify-center mb-2" %>
       </div>
     <% else %>

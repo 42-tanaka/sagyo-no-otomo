@@ -1,10 +1,12 @@
 <div class="w-full">
   <h1 class="font-bold text-2xl">絞り込み検索</h1>
 
-  <div class="dropdown mt-4" >
-    <div tabindex="0" role="button" class="btn btn-accent">絞り込み検索</div>
-      <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-        <%= form_with url: search_posts_path, method: :get do |f| %>
+<div id="accordion">
+  <div class="accordion-item">
+    <button class="btn btn-primary mt-4">絞り込み検索</button>
+    <div class="accordion-content hidden">
+
+      <%= form_with url: search_posts_path, method: :get do |f| %>
 
         <div class="my-3">
           <%= f.check_box :eaten, { class: 'checkbox' }, '1', '0' %>
@@ -34,9 +36,21 @@
           <%= f.submit '検索',class: "btn btn-accent" %>
         </div>
       <% end %>
-        </ul>
+
     </div>
   </div>
+</div>
+
+
+<script>
+  document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function() {
+      const accordionContent = button.nextElementSibling;
+      accordionContent.classList.toggle('hidden');
+    });
+  });
+</script>
+
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
     <% if @posts.present? %>

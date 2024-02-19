@@ -1,39 +1,42 @@
 <div class="w-full">
   <h1 class="font-bold text-2xl">絞り込み検索</h1>
 
-    <%= form_with url: search_posts_path, method: :get do |f| %>
+  <div class="dropdown mt-4" >
+    <div tabindex="0" role="button" class="btn btn-accent">絞り込み検索</div>
+      <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+        <%= form_with url: search_posts_path, method: :get do |f| %>
 
-      <div class="my-3">
-        <%= f.check_box :eaten, { class: 'checkbox' }, '1', '0' %>
-        <%= f.label :eaten, '食べたことがある' %>
-      </div>
+        <div class="my-3">
+          <%= f.check_box :eaten, { class: 'checkbox' }, '1', '0' %>
+          <%= f.label :eaten, '食べたことがある' %>
+        </div>
 
-      <div class="my-3">
-        <%= f.check_box :smell, { class: 'checkbox' }, '1', '0' %>
-        <%= f.label :smell, '匂いが気になる' %>
-      </div>
+        <div class="my-3">
+          <%= f.check_box :smell, { class: 'checkbox' }, '1', '0' %>
+          <%= f.label :smell, '匂いが気になる' %>
+        </div>
 
-      <div class="my-3">
-        <%= f.check_box :sound, { class: 'checkbox' }, '1', '0' %>
-        <%= f.label :sound, '音がする' %>
-      </div>
+        <div class="my-3">
+          <%= f.check_box :sound, { class: 'checkbox' }, '1', '0' %>
+          <%= f.label :sound, '音がする' %>
+        </div>
 
-      <div class="my-3">
-        <%= f.check_box :spill, { class: 'checkbox' }, '1', '0' %>
-        <%= f.label :spill, 'こぼしやすい' %>
-      </div>
+        <div class="my-3">
+          <%= f.check_box :spill, { class: 'checkbox' }, '1', '0' %>
+          <%= f.label :spill, 'こぼしやすい' %>
+        </div>
 
-      <div class="my-3">
-        <%= f.select :category, [['食べ物', 0], ['飲み物', 1]], {}, { class: 'select select-bordered' } %>
-      </div>
+        <div class="my-3">
+          <%= f.select :category, [['食べ物', 0], ['飲み物', 1]], {}, { class: 'select select-bordered' } %>
+        </div>
 
-      <div class="my-3">
-        <%= f.submit '検索',class: "btn btn-accent" %>
-      </div>
-    <% end %>
-</div>
-
-
+        <div class="my-3">
+          <%= f.submit '検索',class: "btn btn-accent" %>
+        </div>
+      <% end %>
+        </ul>
+    </div>
+  </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
     <% if @posts.present? %>

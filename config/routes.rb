@@ -13,11 +13,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  resources :posts do
-    collection do
-      get 'search'
-    end
-  end
+  resources :posts
   resource :profile, only: %i[new create edit update show]
 
 end

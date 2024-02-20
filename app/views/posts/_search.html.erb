@@ -1,12 +1,9 @@
-<div class="w-full">
-  <h1 class="font-bold text-2xl">絞り込み検索</h1>
-
 <div id="accordion">
   <div class="accordion-item">
-    <button class="btn btn-primary mt-4">絞り込み検索</button>
+    <button class="btn btn-active">絞り込み検索</button>
     <div class="accordion-content hidden">
 
-      <%= form_with url: search_posts_path, method: :get do |f| %>
+      <%= form_with url: posts_path, method: :get do |f| %>
 
         <div class="my-3">
           <%= f.check_box :eaten, { class: 'checkbox' }, '1', '0' %>
@@ -41,7 +38,6 @@
   </div>
 </div>
 
-
 <script>
   document.querySelectorAll('.btn').forEach(button => {
     button.addEventListener('click', function() {
@@ -50,17 +46,3 @@
     });
   });
 </script>
-
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-    <% if @posts.present? %>
-      <%= render @posts %>
-      <div>
-        <%= paginate @posts, class: "flex justify-center mb-2" %>
-      </div>
-    <% else %>
-      <p>該当する投稿はありません。</p>
-    <% end %>
-  </div>
-
-</div>

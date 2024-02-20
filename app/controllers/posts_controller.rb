@@ -1,12 +1,10 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_post, only: %i[ edit update destroy ]
-  before_action :search_post, only: %i[ search ]
+  before_action :search_post, only: %i[ index ]
   before_action :store_user_return_to, only: %i[ random ]
 
-  def index
-    @posts = Post.all.includes(:user).order(created_at: :desc).page(params[:page])
-  end
+  def index ;end
 
   def show
     @post = Post.find(params[:id])
@@ -60,8 +58,6 @@ class PostsController < ApplicationController
     @posts = current_user.posts.order(created_at: :desc).page(params[:page])
   end
 
-  def search; end
-
   private
 
   def set_post
@@ -69,7 +65,6 @@ class PostsController < ApplicationController
   end
 
   def search_post
-    if params[:eaten].present? || params[:smell].present? || params[:sound].present? || params[:spill].present? || params[:category].present?
       @posts = Post.all.order(created_at: :desc).page(params[:page])
       @posts = @posts.where(eaten: params[:eaten] == '1') if params[:eaten].present?
       @posts = @posts.where(smell: params[:smell] == '1') if params[:smell].present?
@@ -77,7 +72,6 @@ class PostsController < ApplicationController
       @posts = @posts.where(spill: params[:spill] == '1') if params[:spill].present?
       @posts = @posts.where(category: params[:category]) if params[:category].present?
       @posts.all.order(created_at: :desc).page(params[:page])
-    end
   end
 
   def store_user_return_to

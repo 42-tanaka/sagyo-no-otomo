@@ -93,3 +93,5 @@ gem 'dotenv-rails'
 gem 'line-bot-api'
 
 gem 'kaminari'
+
+gem 'font-awesome-sass'

@@ -3,6 +3,9 @@
   <%= image_tag post.image.url(:index_size), class: "object-cover" %>
   </figure>
   <div class="card-body">
+
+      <%= render 'like_button', post: post %>
+
     <div class="flex items-center mb-1">
       <%= image_tag post.user.profile.avatar.url(:index_size), size: '40x40', class: "mr-2" %>
       <%= post.user.profile.name %>

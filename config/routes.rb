@@ -13,7 +13,13 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  resources :posts
+  resources :posts do
+    collection do
+      get :likes
+    end
+  end
+
+  resources :likes, only: %i[create destroy]
   resource :profile, only: %i[new create edit update show]
 
 end

@@ -58,6 +58,10 @@ class PostsController < ApplicationController
     @posts = current_user.posts.order(created_at: :desc).page(params[:page])
   end
 
+  def likes
+
+  end
+
   private
 
   def set_post

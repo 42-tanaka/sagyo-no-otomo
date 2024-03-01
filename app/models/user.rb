@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_many :posts, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :like_posts, through: :likes, source: :post
 
   def profile_created?
     profile.present?
@@ -15,6 +17,19 @@ class User < ApplicationRecord
   def own?(object)
     object.user_id == id
   end
+
+  def like(post)
+    like_posts << post
+  end
+
+  def unlike(post)
+    like_posts.destroy(post)
+  end
+
+  def like?(post)
+    post.likes.pluck(:user_id).include?(id)
+  end
+
   def social_profile(provider)
     social_profiles.select { |sp| sp.provider == provider.to_s }.first
   end

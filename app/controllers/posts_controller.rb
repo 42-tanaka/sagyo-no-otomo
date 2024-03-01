@@ -59,7 +59,7 @@ class PostsController < ApplicationController
   end
 
   def likes
-
+    @posts = current_user.like_posts.order(created_at: :desc).page(params[:page])
   end
 
   private

@@ -1,11 +1,11 @@
 <turbo-frame id="like-button-<%= post.id %>">
   <% if current_user.like?(post) %>
     <%= link_to like_path(current_user.likes.find_by(post_id: post.id)),  data: { turbo_method: :delete } do %>
-      <%= "お気に入りをはずす" %>
+      <i class="fa-solid fa-heart fa-lg" style="color:#fa8072"></i>
     <% end %>
   <% else %>
     <%= link_to likes_path(post_id: post.id),  data: { turbo_method: :post } do %>
-      <%= "お気に入り" %>
+      <i class="fa-regular fa-heart fa-lg" style="color:#fa8072"></i>
     <% end %>
   <% end %>
 </turbo-frame>

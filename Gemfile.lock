@@ -144,6 +144,8 @@ GEM
     fog-xml (0.1.4)
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
+    font-awesome-sass (6.5.1)
+      sassc (~> 2.0)
     formatador (1.1.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
@@ -295,6 +297,8 @@ GEM
     ruby-vips (2.2.0)
       ffi (~> 1.12)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     selenium-webdriver (4.16.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -358,6 +362,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   fog-aws
+  font-awesome-sass
   importmap-rails
   jbuilder
   kaminari

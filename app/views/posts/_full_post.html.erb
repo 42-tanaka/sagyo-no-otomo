@@ -7,7 +7,7 @@
       <%= render 'like_button', post: post %>
     </div>
     <div class="flex items-center mb-2">
-      <%= image_tag post.user.profile.avatar.url(:index_size), size: '40x40', class: "mr-2" %>
+      <%= image_tag post.user.profile.avatar.url(:index_size), class: "w-10 h-10 rounded-full object-cover mr-2" %>
       <%= post.user.profile.name %>
     </div>
 
@@ -45,8 +45,12 @@
 
     <div class="card-actions justify-end mt-2">
     <% if current_user.own?(post) %>
-      <%= link_to "編集", edit_post_path(post), class: "btn btn-ghost mr-1" %>
-      <%= button_to "削除", post_path(post), method: :delete,  class: "btn btn-ghost mr-1" %>
+      <%= link_to edit_post_path(post), class: "btn btn-ghost mr-1" do %>
+        <i class="fa-solid fa-pen-to-square fa-lg" style="color:#f4a460"></i>
+      <% end %>
+      <%= button_to post_path(post), method: :delete,  class: "btn btn-ghost mr-1" do %>
+        <i class="fa-solid fa-trash fa-lg" style="color:#4682b4"></i>
+        <% end %>
       <% end %>
       <%= link_to "一覧に戻る", posts_path, class: "btn btn-ghost" %>
     </div>

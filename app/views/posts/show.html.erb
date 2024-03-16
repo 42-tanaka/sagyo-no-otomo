@@ -3,8 +3,15 @@
     <h1 class="font-bold text-2xl">投稿詳細</h1>
     <div class="mb-2">
     <%= render partial: "posts/full_post", locals: { post: @post } %>
-    <%= render 'comments/form', { comment: @comment } %>
-    <%= render 'comments/comments', { comments: @comments } %>
+
+    <%= turbo_frame_tag "new_comment" do %>
+      <%= render 'comments/form', post: @post, comment: @comment %>
+    <% end %>
+
+    <%= turbo_frame_tag "comments" do %>
+      <%= render 'comments/comments', comments: @comments %>
+    <% end %>
+
     </div>
   </div>
 </div>

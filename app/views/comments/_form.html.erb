@@ -1,11 +1,15 @@
-<%= form_with model: [ @post, comment ] do |f| %>
+<%= turbo_frame_tag comment do %>
 
-  <div class="mt-5">
-    <% f.label :body %>
-    <%= f.text_field :body, placeholder: "コメントする", class: "input input-bordered w-full max-w-xs" %>
-  </div>
+  <%= form_with model: [ @post, @comment ] do |f| %>
 
-  <div class="flex justify-end mb-8 mr-4">
-    <%= f.submit "送信", class: "btn btn-primary" %>
-  </div>
+    <div class="flex justify-center">
+      <% f.label :body %>
+      <%= f.text_area :body, placeholder: "コメントする", class: "textarea textarea-bordered textarea-sm w-full max-w-xs" %>
+    </div>
+
+    <div class="flex justify-end my-4 mr-4">
+      <%= f.submit "送信", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+
 <% end %>

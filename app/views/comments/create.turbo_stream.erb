@@ -1,0 +1,7 @@
+<%= turbo_stream.prepend "comments", partial: "comments/comment", locals: { comment: @comment } %>
+
+<%# 送信後入力フォームの中身を空にしたいけどならない。再送はできないようにはなる %>
+<%= turbo_stream.replace "new_comment", partial: "comments/form", locals: { post: @post, comment: Comment.new } %>
+
+<%# 送信後、フォームのそのものを消す %>
+<%#= turbo_stream.remove "new_comment" %>

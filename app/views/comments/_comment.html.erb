@@ -1,26 +1,33 @@
 <div id="comment-<%= comment.id %>">
-  <div class="chat chat-start ml-12">
-    <div class="chat-bubble chat-bubble-accent">
-      <%= simple_format(comment.body) %>
 
-        <div class="card-actions justify-end">
-          <% if current_user.own?(comment) %>
-            <%= link_to edit_post_comment_path(@post, comment) do %>
-              <i class="fa-solid fa-pen-to-square fa-sm" style="color:#e69b5a"></i>
-            <% end %>
-            <%= button_to post_comment_path(@post, comment), method: :delete do %>
-              <i class="fa-solid fa-trash fa-sm" style="color:#4682b4"></i>
-            <% end %>
-          <% end %>
+  <%= turbo_frame_tag comment do %>
 
-        </div>
+    <div class="chat chat-start ml-12">
+      <div class="chat-bubble chat-bubble-accent">
+
+            <%= simple_format(comment.body) %>
+
+                <div class="card-actions justify-end">
+                  <% if current_user.own?(comment) %>
+                    <%= link_to edit_post_comment_path(@post, comment) do %>
+                      <i class="fa-solid fa-pen-to-square fa-sm" style="color:#e69b5a"></i>
+                    <% end %>
+                    <%= button_to post_comment_path(@post, comment), method: :delete do %>
+                      <i class="fa-solid fa-trash fa-sm" style="color:#4682b4"></i>
+                    <% end %>
+                  <% end %>
+
+                </div>
+
       </div>
     </div>
-  </div>
 
-  <div class="flex items-center mb-4">
-    <%= image_tag comment.user.profile.avatar.url(:index_size), class: "w-10 h-10 rounded-full object-cover mr-2" %>
-    <%= comment.user.profile.name %>
-  </div>
+    <div class="flex items-center mb-4">
+      <%= image_tag comment.user.profile.avatar.url(:index_size), class: "w-10 h-10 rounded-full object-cover mr-2" %>
+      <%= comment.user.profile.name %>
+    </div>
+
+  <% end %>
 
 </div>
+

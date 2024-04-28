@@ -1,7 +1,7 @@
 <div class="container mx-auto">
 
-<div class="card bg-accent text-primary-content">
-  <div class="card-body">
+<div class="card text-primary-content" style="background-image: url('<%= asset_path 'background3.png' %>'); background-size: cover; background-position: center; position: relative;">
+  <div class="card-body ">
     <h2 class="card-title text-2xl mb-3">作業のオトモについて</h2>
     <p>デスクワーク作業のお供に食べたお菓子や飲み物を、「匂い」「音」「こぼしやすさ」といった</p>
     <p>職場だと気になってしまうポイントと一緒に、記録・シェアするサービスです。</p>
@@ -17,81 +17,115 @@
   </div>
 </div>
 
-<div class="font-bold text-xl my-4">このサイトの使い方・できること</div>
+<div class="font-bold text-xl my-4">このサイトで出来ること・使い方</div>
 
-    <div class="collapse collapse-arrow bg-base-200 mb-2">
-      <input type="checkbox" id="collapse5" class="peer" />
-      <label for="collapse5" class="collapse-title text-lg font-medium peer-checked:bg-secondary peer-checked:text-primary-content">
-      LINEでログインしてユーザー登録する
-      </label>
-      <div class="collapse-content peer-checked:block hidden">
-        <div class="font-bold text-lg my-1">LINEログイン</div>
-        <p>メールやパスワード入力なしでログインできます。ログイン後にユーザー名とアバター画像を登録できます。</p>
-        <%= image_tag 'sample_profile_form.png'%>
-        <div class="font-bold text-lg my-1">マイページ</div>
-        <p>ユーザー名、アバター画像、LINEプッシュ通知の受け取るかどうかを変更できます。</p>
-        <%= image_tag 'sample_mypage.png'%>
-    </div>
-  </div>
+  <div class="carousel w-full">
+    <div id="slide1" class="carousel-item relative w-full">
 
-    <div class="collapse collapse-arrow bg-base-200 mb-2">
-      <input type="checkbox" id="collapse1" class="peer" />
-      <label for="collapse1" class="collapse-title text-lg font-medium peer-checked:bg-secondary peer-checked:text-primary-content">
-        デスクワーク中に食べたお菓子や飲み物をシェアする
-      </label>
-      <div class="collapse-content peer-checked:block hidden">
-        <div class="font-bold text-lg my-1">投稿する</div>
-        <p>「匂い」「音」「こぼしやすさ」といった、デスクワーク中だと気になるポイントを、画像やコメントと一緒に投稿することできます。</p>
-        <div class="flex gap-x-4">
-          <div class="object-contain">
-            <%= image_tag 'sample_post_form.png'%>
-          </div>
-          <div class="object-contain">
-            <%= image_tag 'sample_post.png'%>
-          </div>
-        </div>
-        <div class="font-bold text-lg my-1">投稿一覧</div>
-        <p>職場で食べるとき気になるかどうかに注目して、ユーザーの投稿を一覧で見ることができます。</p>
-        <%= image_tag 'sample_posts.png'%>
+      <div class="card bg-secondary text-primary-content px-8 py-4 flex flex-col items-center justify-start w-full">
+        <h3 class="card-title text-2xl mb-3">LINEでログインしてユーザー登録する</h3>
+          <div class="badge badge-outline badge-lg font-bold text-lg my-4">LINEログイン</div>
+          <p>メールやパスワード入力なしでログインできます。ログイン後にユーザー名とアバター画像を登録できます。</p>
+          <%= image_tag 'sample_profile_form.png' , class:'justify-first mt-2'%>
+          <div class="badge badge-outline badge-lg font-bold text-lg my-4">マイページ</div>
+          <p>ユーザー名、アバター画像、LINEプッシュ通知の受け取るかどうかを変更できます。</p>
+          <%= image_tag 'sample_mypage.png'%>
+
+      </div>
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-1 right-1 top-1/2">
+        <a href="#slide5" class="btn btn-circle p-1 opacity-50">❮</a>
+        <a href="#slide2" class="btn btn-circle p-1 opacity-50">❯</a>
       </div>
     </div>
 
-    <div class="collapse collapse-arrow bg-base-200 mb-2">
-      <input type="checkbox" id="collapse4" class="peer" />
-      <label for="collapse4" class="collapse-title text-lg font-medium peer-checked:bg-secondary peer-checked:text-primary-content">
-      ランダムに見つける
-      </label>
-      <div class="collapse-content peer-checked:block hidden">
-        <div class="font-bold text-lg my-1">ランダムピックアップ</div>
-        <p>全ての投稿からランダムに１件ピックアップされます。作業のお供がまだ決まっていない時、ランダムな出会いで選びませんか？</p>
-        <div class="font-bold text-lg my-1">LINEプッシュ通知</div>
-        <p>以下のQRコードから友だち追加すると、毎日お昼12時にランダムピックアップのURLが届きます。午後からの作業のお供の候補を見に行きませんか？</p>
-        <p>※友だち追加後は、マイページで通知の受け取りが変更できます。</p>
-        <%= image_tag 'sagyo-no-otomo_qr.png', size: '100x100'%>
-    </div>
-  </div>
+    <div id="slide2" class="carousel-item relative w-full">
 
-    <div class="collapse collapse-arrow bg-base-200 mb-2">
-      <input type="checkbox" id="collapse3" class="peer" />
-      <label for="collapse3" class="collapse-title text-lg font-medium peer-checked:bg-secondary peer-checked:text-primary-content">
-        条件を絞って探す
-      </label>
-      <div class="collapse-content peer-checked:block hidden">
-        <div class="font-bold text-lg my-1">絞り込み検索</div>
+      <div class="card bg-secondary text-primary-content px-8 py-4 flex flex-col items-center justify-start w-full">
+        <h3 class="card-title text-2xl mb-3">デスクワーク中に食べたお菓子や飲み物をシェアする</h3>
+          <div class="badge badge-outline badge-lg font-bold text-lg my-4">投稿する</div>
+          <p>「匂い」「音」「こぼしやすさ」といった、デスクワーク中だと気になるポイントを、画像やコメントと一緒に投稿することできます。</p>
+            <div class="flex gap-x-4">
+              <div class="object-contain">
+                <%= image_tag 'sample_post_form.png'%>
+              </div>
+              <div class="object-contain">
+                <%= image_tag 'sample_post.png'%>
+              </div>
+            </div>
+          <div class="badge badge-outline badge-lg font-bold text-lg my-4">投稿一覧</div>
+          <p>職場で食べるときに「匂い」「音」「こぼしやすさ」が気になるかどうかに注目して、ユーザーの投稿を一覧で見ることができます。
+</p>
+          <%= image_tag 'sample_posts.png'%>
+      </div>
+
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-1 right-1 top-1/2 opacity-50">
+        <a href="#slide1" class="btn btn-circle">❮</a>
+        <a href="#slide3" class="btn btn-circle">❯</a>
+      </div>
+    </div>
+
+    <div id="slide3" class="carousel-item relative w-full">
+
+      <div class="card bg-secondary text-primary-content px-8 py-4 flex flex-col items-center justify-start w-full">
+        <h3 class="card-title text-2xl mb-3">デスクワーク中に食べられているお菓子や飲み物を見つける</h3>
+        <div class="badge badge-outline badge-lg font-bold text-lg my-4">絞り込み検索</div>
         <p>「匂い」「音」「こぼしやすさ」といった、職場でのデスクワーク中だと気になるポイントを絞り込んで検索することができます。</p>
-        <%= image_tag 'sample_search.png'%>
+        <%= image_tag 'sample_search.png' %>
+        <div class="badge badge-outline badge-lg font-bold text-lg my-4">ランダムピックアップ</div>
+        <p>全ての投稿からランダムに１件ピックアップされます。</p>
+        <p>作業のお供がまだ決まっていない時、ランダムな出会いで選びませんか？</p>
+        <%= image_tag 'sample_menu_random.png' %>
+        <div class="badge badge-outline badge-lg font-bold text-lg my-4">LINEプッシュ通知</div>
+        <p>以下のQRコードから友だち追加すると、毎日お昼12時にランダムピックアップのURLが届きます。</p>
+        <p>午後からの作業のお供の候補を見に行きませんか？</p>
+        <p>※友だち追加後は、マイページで通知の受け取りが変更できます。</p>
+        <%= image_tag 'sagyo-no-otomo_qr.png' %>
+      </div>
+
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-1 right-1 top-1/2 opacity-50">
+        <a href="#slide2" class="btn btn-circle">❮</a>
+        <a href="#slide4" class="btn btn-circle">❯</a>
       </div>
     </div>
 
-    <div class="collapse collapse-arrow bg-base-200 mb-2">
-      <input type="checkbox" id="collapse2" class="peer" />
-      <label for="collapse2" class="collapse-title text-lg font-medium peer-checked:bg-secondary peer-checked:text-primary-content">
-        自分が食べたお菓子や飲み物を見返す
-      </label>
-      <div class="collapse-content peer-checked:block hidden">
-        <div class="font-bold text-lg my-1">自分の投稿一覧</div>
-        <p>自分が投稿したお菓子や飲み物を、まとめて見返すことができます。</p>
+    <div id="slide4" class="carousel-item relative w-full">
+
+      <div class="card bg-secondary text-primary-content px-8 py-4 flex flex-col items-center justify-start w-full">
+        <h3 class="card-title text-2xl mb-3">お気に入り・コメントする</h3>
+        <div class="badge badge-outline badge-lg font-bold text-lg my-4">コメント機能</div>
+        <p>投稿詳細ページでコメントを投稿できます。</p>
+        <%= image_tag 'sample_comment.png' %>
+        <div class="badge badge-outline badge-lg font-bold text-lg my-4">お気に入り機能</div>
+        <p>投稿詳細ページから、投稿をお気に入りできます。</p>
+        <%= image_tag 'sample_like.png' %>
+        <div class="badge badge-outline badge-lg font-bold text-lg my-4">お気に入り一覧</div>
+        <p>お気に入りしたお菓子や飲み物は、お気に入り一覧からまとめて見返すことができます。</p>
+        <%= image_tag 'sample_menu_likes.png' %>
+
+      </div>
+
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-1 right-1 top-1/2 opacity-50">
+        <a href="#slide3" class="btn btn-circle">❮</a>
+        <a href="#slide5" class="btn btn-circle">❯</a>
       </div>
     </div>
+
+    <div id="slide5" class="carousel-item relative w-full">
+
+      <div class="card bg-secondary text-primary-content px-8 py-4 flex flex-col items-center justify-start w-full">
+        <h3 class="card-title text-2xl mb-3">自分が投稿したお菓子や飲み物を見返す</h3>
+
+        <div class="badge badge-outline badge-lg font-bold text-lg my-4">自分の投稿一覧</div>
+          <p>自分が投稿したお菓子や飲み物を、まとめて見返すことができます。</p>
+          <%= image_tag 'sample_menu_myposts.png' %>
+      </div>
+
+
+      <div class="absolute flex justify-between transform -translate-y-1/2 left-1 right-1 top-1/2 opacity-50">
+        <a href="#slide4" class="btn btn-circle">❮</a>
+        <a href="#slide1" class="btn btn-circle">❯</a>
+      </div>
+    </div>
+  </div>
 
 </div>

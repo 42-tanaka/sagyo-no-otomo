@@ -12,7 +12,7 @@
       <%= post.user.profile.name %>
     </div>
     <h2 class="card-title text-lg h-8 mb-2"><%= post.title %></h2>
-      <% if post.smell || post.sound || post.spill %>
+      <% if post.smell || post.sound || post.spill || post.hands_dirty %>
         <div class="badge badge-secondary w-full h-8 flex items-center justify-center">職場だと気になるかも？</div>
       <% else %>
         <div class="badge badge-accent w-full h-8 flex items-center justify-center">職場でも気にならない！</div>

@@ -54,6 +54,11 @@
     <%= f.label :spill, "こぼしやすい" %>
   </div>
 
+  <div class="my-5">
+    <%= f.check_box :hands_dirty, class: "checkbox" %>
+    <%= f.label :hands_dirty, "手が汚れる" %>
+  </div>
+
   <div class="inline">
     <%= f.submit "送信", class: "btn btn-primary mb-4" %>
   </div>

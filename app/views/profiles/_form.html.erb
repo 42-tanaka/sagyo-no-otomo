@@ -2,12 +2,12 @@
 
   <%= form_with model: @profile, url: profile_path do |f| %>
     <div class="label">
-      <span class="label-text">ユーザー名（必須）</span>
+      <span class="label-text font-bold text-lg mt-2">ユーザー名（必須）</span>
     </div>
       <%= f.text_field :name, placeholder: "ここに入力", class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
 
     <div class="label">
-      <span class="label-text mt-2">アバター画像（任意）</span>
+      <span class="label-text font-bold text-lg mt-2">アバター画像（任意）</span>
     </div>
       <%= f.file_field :avatar, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
 

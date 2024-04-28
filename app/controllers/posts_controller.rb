@@ -76,6 +76,7 @@ class PostsController < ApplicationController
       @posts = @posts.where(smell: params[:smell] == '1') if params[:smell].present?
       @posts = @posts.where(sound: params[:sound] == '1') if params[:sound].present?
       @posts = @posts.where(spill: params[:spill] == '1') if params[:spill].present?
+      @posts = @posts.where(hands_dirty: params[:hands_dirty] == '1') if params[:hands_dirty].present?
       @posts = @posts.where(category: params[:category]) if params[:category].present?
       @posts.all.order(created_at: :desc).page(params[:page])
   end
@@ -85,6 +86,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :body, :image, :category, :eaten, :smell, :sound, :spill)
+    params.require(:post).permit(:title, :body, :image, :category, :eaten, :smell, :sound, :spill, :hands_dirty)
   end
 end

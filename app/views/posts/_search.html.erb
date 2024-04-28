@@ -26,6 +26,11 @@
         </div>
 
         <div class="my-3">
+          <%= f.check_box :hands_dirty, { class: 'checkbox' }, '1', '0' %>
+          <%= f.label :hands_dirty, '手が汚れる' %>
+        </div>
+
+        <div class="my-3">
           <%= f.select :category, [['食べ物', 0], ['飲み物', 1]], {}, { class: 'select select-bordered' } %>
         </div>
 

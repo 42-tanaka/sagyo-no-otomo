@@ -1,10 +1,10 @@
 <div class="container mx-auto">
 
-<div class="card text-primary-content" style="background-image: url('<%= asset_path 'background3.png' %>'); background-size: cover; background-position: center; position: relative;">
+<div class="card text-primary-content" style="background-image: url('<%= asset_path 'background3.png'%>'); background-size: cover; background-position: center; position: relative;">
   <div class="card-body ">
     <h2 class="card-title text-2xl mb-3">作業のオトモについて</h2>
-    <p>デスクワーク作業のお供に食べたお菓子や飲み物を、「匂い」「音」「こぼしやすさ」といった</p>
-    <p>職場だと気になってしまうポイントと一緒に、記録・シェアするサービスです。</p>
+    <p>デスクワーク作業のお供に食べたお菓子や飲み物を、「匂い」「音」「こぼしやすさ」「手の汚れやすさ」といった、
+    職場だと気になってしまうポイントと一緒に、記録・シェアするサービスです。</p>
 
     <div class="card-actions justify-left mt-3">
       <% if user_signed_in? %>
@@ -26,10 +26,10 @@
         <h3 class="card-title text-2xl mb-3">LINEでログインしてユーザー登録する</h3>
           <div class="badge badge-outline badge-lg font-bold text-lg my-4">LINEログイン</div>
           <p>メールやパスワード入力なしでログインできます。ログイン後にユーザー名とアバター画像を登録できます。</p>
-          <%= image_tag 'sample_profile_form.png' , class:'justify-first mt-2'%>
+          <%= image_tag 'sample_profile_form.png', class: "my-3"%>
           <div class="badge badge-outline badge-lg font-bold text-lg my-4">マイページ</div>
           <p>ユーザー名、アバター画像、LINEプッシュ通知の受け取るかどうかを変更できます。</p>
-          <%= image_tag 'sample_mypage.png'%>
+          <%= image_tag 'sample_mypage.png', class: "my-3"%>
 
       </div>
       <div class="absolute flex justify-between transform -translate-y-1/2 left-1 right-1 top-1/2">
@@ -43,19 +43,19 @@
       <div class="card bg-secondary text-primary-content px-8 py-4 flex flex-col items-center justify-start w-full">
         <h3 class="card-title text-2xl mb-3">デスクワーク中に食べたお菓子や飲み物をシェアする</h3>
           <div class="badge badge-outline badge-lg font-bold text-lg my-4">投稿する</div>
-          <p>「匂い」「音」「こぼしやすさ」といった、デスクワーク中だと気になるポイントを、画像やコメントと一緒に投稿することできます。</p>
+          <p>「匂い」「音」「こぼしやすさ」「手の汚れやすさ」といった、デスクワーク中だと気になるポイントを、画像やコメントと一緒に投稿することできます。</p>
+          <p>※画像は必須ではありません</p>
             <div class="flex gap-x-4">
               <div class="object-contain">
-                <%= image_tag 'sample_post_form.png'%>
+                <%= image_tag 'sample_post_form.png', class: "my-3"%>
               </div>
               <div class="object-contain">
-                <%= image_tag 'sample_post.png'%>
+                <%= image_tag 'sample_post.png', class: "my-3"%>
               </div>
             </div>
           <div class="badge badge-outline badge-lg font-bold text-lg my-4">投稿一覧</div>
-          <p>職場で食べるときに「匂い」「音」「こぼしやすさ」が気になるかどうかに注目して、ユーザーの投稿を一覧で見ることができます。
-</p>
-          <%= image_tag 'sample_posts.png'%>
+          <p>職場で食べるときに気になるかどうかに注目して、ユーザーの投稿を一覧で見ることができます。</p>
+          <%= image_tag 'sample_posts.png', class: "my-3"%>
       </div>
 
       <div class="absolute flex justify-between transform -translate-y-1/2 left-1 right-1 top-1/2 opacity-50">
@@ -70,16 +70,16 @@
         <h3 class="card-title text-2xl mb-3">デスクワーク中に食べられているお菓子や飲み物を見つける</h3>
         <div class="badge badge-outline badge-lg font-bold text-lg my-4">絞り込み検索</div>
         <p>「匂い」「音」「こぼしやすさ」といった、職場でのデスクワーク中だと気になるポイントを絞り込んで検索することができます。</p>
-        <%= image_tag 'sample_search.png' %>
+        <%= image_tag 'sample_search.png' , class: "my-3"%>
         <div class="badge badge-outline badge-lg font-bold text-lg my-4">ランダムピックアップ</div>
         <p>全ての投稿からランダムに１件ピックアップされます。</p>
         <p>作業のお供がまだ決まっていない時、ランダムな出会いで選びませんか？</p>
-        <%= image_tag 'sample_menu_random.png' %>
+        <%= image_tag 'sample_menu_random.png' , class: "my-3"%>
         <div class="badge badge-outline badge-lg font-bold text-lg my-4">LINEプッシュ通知</div>
         <p>以下のQRコードから友だち追加すると、毎日お昼12時にランダムピックアップのURLが届きます。</p>
         <p>午後からの作業のお供の候補を見に行きませんか？</p>
         <p>※友だち追加後は、マイページで通知の受け取りが変更できます。</p>
-        <%= image_tag 'sagyo-no-otomo_qr.png' %>
+        <%= image_tag 'sagyo-no-otomo_qr.png', size: "150x150" , class: "my-3"%>
       </div>
 
       <div class="absolute flex justify-between transform -translate-y-1/2 left-1 right-1 top-1/2 opacity-50">
@@ -94,13 +94,13 @@
         <h3 class="card-title text-2xl mb-3">お気に入り・コメントする</h3>
         <div class="badge badge-outline badge-lg font-bold text-lg my-4">コメント機能</div>
         <p>投稿詳細ページでコメントを投稿できます。</p>
-        <%= image_tag 'sample_comment.png' %>
+        <%= image_tag 'sample_comment.png' , class: "my-3"%>
         <div class="badge badge-outline badge-lg font-bold text-lg my-4">お気に入り機能</div>
         <p>投稿詳細ページから、投稿をお気に入りできます。</p>
-        <%= image_tag 'sample_like.png' %>
+        <%= image_tag 'sample_like.png' , class: "my-3"%>
         <div class="badge badge-outline badge-lg font-bold text-lg my-4">お気に入り一覧</div>
         <p>お気に入りしたお菓子や飲み物は、お気に入り一覧からまとめて見返すことができます。</p>
-        <%= image_tag 'sample_menu_likes.png' %>
+        <%= image_tag 'sample_menu_likes.png' , class: "my-3"%>
 
       </div>
 
@@ -117,7 +117,7 @@
 
         <div class="badge badge-outline badge-lg font-bold text-lg my-4">自分の投稿一覧</div>
           <p>自分が投稿したお菓子や飲み物を、まとめて見返すことができます。</p>
-          <%= image_tag 'sample_menu_myposts.png' %>
+          <%= image_tag 'sample_menu_myposts.png' , class: "my-3"%>
       </div>
 
 

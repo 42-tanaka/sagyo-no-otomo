@@ -24,7 +24,7 @@
     <% end %>
 
     <div class="card-actions justify-light">
-      <% if post.smell || post.sound || post.spill %>
+      <% if post.smell || post.sound || post.spill || post.hands_dirty %>
         <% if post.smell %>
           <div class="badge badge-secondary w-full h-8 flex items-center justify-center">匂いがある</div>
         <% end %>
@@ -33,6 +33,9 @@
         <% end %>
         <% if post.spill %>
           <div class="badge badge-secondary  w-full h-8 flex items-center justify-center">こぼしやすい</div>
+        <% end %>
+        <% if post.hands_dirty %>
+          <div class="badge badge-secondary  w-full h-8 flex items-center justify-center">手が汚れる</div>
         <% end %>
       <% else %>
         <p class="badge badge-accent w-full h-8 flex items-center justify-center" >職場でも気にならない！</p>

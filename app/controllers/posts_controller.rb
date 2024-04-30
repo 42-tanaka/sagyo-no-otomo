@@ -72,13 +72,14 @@ class PostsController < ApplicationController
 
   def search_post
       @posts = Post.all.order(created_at: :desc).page(params[:page])
-      @posts = @posts.where(eaten: params[:eaten] == '1') if params[:eaten].present?
-      @posts = @posts.where(smell: params[:smell] == '1') if params[:smell].present?
-      @posts = @posts.where(sound: params[:sound] == '1') if params[:sound].present?
-      @posts = @posts.where(spill: params[:spill] == '1') if params[:spill].present?
-      @posts = @posts.where(hands_dirty: params[:hands_dirty] == '1') if params[:hands_dirty].present?
-      @posts = @posts.where(category: params[:category]) if params[:category].present?
-      @posts.all.order(created_at: :desc).page(params[:page])
+
+      @posts = @posts.eaten if params[:eaten] == '1'
+      @posts = @posts.smelly if params[:smell] == '1'
+      @posts = @posts.noisy if params[:sound] == '1'
+      @posts = @posts.spilly if params[:spill] == '1'
+      @posts = @posts.dirty_hands if params[:hands_dirty] == '1'
+      @posts = @posts.by_category(params[:category])
+      @posts = @posts.recent.page(params[:page])
   end
 
   def store_user_return_to

@@ -57,11 +57,12 @@ class PostsController < ApplicationController
   end
 
   def my_posts
-    @posts = current_user.posts.order(created_at: :desc).page(params[:page])
+    @posts = current_user.posts.recent.page(params[:page])
+
   end
 
   def likes
-    @posts = current_user.like_posts.order(created_at: :desc).page(params[:page])
+    @posts = current_user.like_posts.recent.page(params[:page])
   end
 
   private
@@ -71,7 +72,7 @@ class PostsController < ApplicationController
   end
 
   def search_post
-      @posts = Post.all.order(created_at: :desc).page(params[:page])
+      @posts = Post.all.recent.page(params[:page])
 
       @posts = @posts.eaten if params[:eaten] == '1'
       @posts = @posts.smelly if params[:smell] == '1'

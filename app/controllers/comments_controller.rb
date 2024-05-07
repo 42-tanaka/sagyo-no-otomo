@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.turbo_stream
-        format.html { redirect_to post_path(@post), status: :unprocessable_entity }
+        format.html { redirect_to post_path(@post) }
       else
         format.turbo_stream { render turbo_stream: turbo_stream.replace("new_comment", partial: "comments/form", locals: { post: @post, comment: @comment }) }
         format.html { render "posts/show", status: :unprocessable_entity }
@@ -22,6 +22,7 @@ class CommentsController < ApplicationController
 
   def update
     @post = @comment.post
+
     if @comment.update(comment_params)
       redirect_to post_path(@comment.post)
     else

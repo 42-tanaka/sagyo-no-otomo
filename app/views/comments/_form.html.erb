@@ -1,6 +1,6 @@
 <%= turbo_frame_tag comment do %>
 
-  <%= form_with model: [ @post, @comment ] do |f| %>
+  <%= form_with model: [ @post, comment ] do |f| %>
 
     <div class="flex justify-center">
       <% f.label :body %>
@@ -10,6 +10,7 @@
     <div class="flex justify-end my-4 mr-4">
       <%= f.submit "送信", class: "btn btn-primary" %>
     </div>
+
   <% end %>
 
 <% end %>

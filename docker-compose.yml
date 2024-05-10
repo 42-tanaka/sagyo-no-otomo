@@ -2,6 +2,7 @@ version: '3'
 services:
   db:
     image: postgres
+    platform: linux/x86_64
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_HOST_AUTH_METHOD=trust

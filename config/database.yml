@@ -13,7 +13,6 @@ default: &default
   # username: sagyo-no-otomo
   username: postgres
   password: password
-  # host: localhost
   host: db
 
 

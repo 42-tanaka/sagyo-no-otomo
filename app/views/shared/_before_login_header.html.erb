@@ -1,7 +1,7 @@
 <header>
   <div class="navbar bg-base-100">
     <div class="flex-1">
-      <%= link_to "作業のオトモ", root_path, class: "btn btn-ghost text-3xl" %>
+      <%= link_to image_tag('logo.png'), root_path, style: "width: 250px;" %>
     </div>
     <div class="justify-center">
       <%= link_to "LINEログイン", user_line_omniauth_authorize_path, method: :post %>

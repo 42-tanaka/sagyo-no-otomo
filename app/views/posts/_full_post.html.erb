@@ -1,3 +1,5 @@
+<% assign_meta_tags title: post.title, image: image_url(post.image.url) %>
+
 <div class="card w-full max-w-lg bg-base-100 shadow-xl my-6 mx-auto">
   <figure>
   <%= image_tag post.image.url(:index_size), class: "object-contain" %>

@@ -10,7 +10,7 @@
         <% if user_signed_in? %>
           <button class="btn"><%= link_to "投稿を見にいく", posts_path %></button>
         <% else %>
-          <button class="btn"><%= link_to "LINEログイン", user_line_omniauth_authorize_path %></button>
+          <button class="btn"><%= link_to "LINEでログインする", user_line_omniauth_authorize_path %></button>
         <% end %>
       </div>
 

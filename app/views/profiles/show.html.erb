@@ -2,18 +2,15 @@
   <h1 class="font-bold text-2xl">マイページ</h1>
 
   <div class="container mx-auto px-2">
-  <div class="font-bold text-lg my-4">ユーザー名</div>
-    <p><%= current_user.profile.name %></p>
-
-  <div class="font-bold text-lg my-4">アバター画像</div>
-
-    <p><%= image_tag current_user.profile.avatar.url, size: '100x100'%></p>
-
+    <div class="font-bold text-lg my-4">ユーザー名</div>
+      <p><%= current_user.profile.name %></p>
+    <div class="font-bold text-lg my-4">アバター画像</div>
+      <p><%= image_tag current_user.profile.avatar.url, size: '100x100'%></p>
   </div>
 
-    <button class="btn btn-primary my-4">
-    <%= link_to "ユーザー情報を変更する", edit_profile_path %>
-    </button>
+  <button class="btn btn-primary my-4">
+  <%= link_to "ユーザー情報を変更する", edit_profile_path %>
+  </button>
 
   <% if user_signed_in? %>
     <%= form_with url: update_notification_settings_path, method: :patch do %>
@@ -21,5 +18,4 @@
       <%= submit_tag(current_user.line_notifications ? 'LINE通知をオフにする' : 'LINE通知を受け取る', class: 'btn btn-secondary') %>
     <% end %>
   <% end %>
-
-
+</div>

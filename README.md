@@ -72,3 +72,6 @@ https://sagyo-no-otomo-fd2222903b9e.herokuapp.com　<br>
 <br>
 
 ## ■ ER図
+
+![image](https://github.com/42-tanaka/sagyo-no-otomo/assets/124770475/9c1761b6-29b3-4e61-9f85-56ad376dfd81)
+
